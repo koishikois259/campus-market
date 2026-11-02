@@ -1,26 +1,110 @@
 @startuml
-!include model/style.iuml
-title 校园二手交易系统 · UML 类图（AI 初稿 v0.1）\n主要实体关系总览，完整属性与操作见 01—07 详图
-!include model/identity.iuml
-!include model/catalog.iuml
-!include model/trade.iuml
-!include model/finance.iuml
-!include model/fulfillment.iuml
-!include model/governance.iuml
-hide members
-User "1" <-- "0..*" Product : 卖家编号
-Product "1" <-- "0..*" Reservation : 预约商品
-Order "1" -- "0..*" PaymentRecord : 支付尝试
-Order "1" -- "0..*" DeliveryTask : 代交历史
-Order "1" -- "0..*" AfterSaleRequest : 独立售后
-AfterSaleRequest "0..1" -- "0..1" Refund : 售后来源
-ReturnInspection "0..1" -- "0..1" ReturnedLot : 售后退回来源
-User -[hidden]down-> Report
-legend bottom
-  实线：业务关联（跨模块通常保存 UUID）；黑菱形：整体拥有的组成部分
-  空心三角：继承；虚线箭头：依赖；0..1：可选一个；0..*：可有多个
-  每个举报只关联一种目标；每笔退款只适用一种来源规则，详见设计说明
-  买家、卖家、管理员、代交人、举报目标等编号关联在各领域详图中标明
-  普通角色可兼任；本图不以继承表达买家与卖家
-endlegend
+' v0.2: simplified by AI following the user's reference and review.
+!pragma layout smetana
+title 校园二手交易系统类图
+skinparam defaultFontName Microsoft YaHei
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam roundcorner 0
+skinparam classBackgroundColor #F1F1F1
+skinparam classBorderColor #777777
+skinparam ArrowColor #333333
+skinparam nodesep 40
+skinparam ranksep 55
+
+class "用户" as User {
+  - 邮箱: String
+  - 角色集合: Set<Role>
+  + 登录(): void
+  + 检查权限(): boolean
+}
+
+class "商品" as Product {
+  - 名称: String
+  - 单价: BigDecimal
+  - 可用数量: int
+  - 状态: ProductStatus
+  - 交易类型: TradeType
+  - 售后支持: boolean
+  + 编辑(): void
+  + 提交审核(): void
+  + 审核(通过: boolean): void
+  + 下架(): void
+}
+
+class "预约" as Reservation {
+  - 数量: int
+  - 卖家答复: SellerDecision
+  - 确认截止时间: Instant
+  + 发起(): void
+  + 接受(): void
+  + 拒绝(): void
+}
+
+class "订单" as Order {
+  - 状态: OrderStatus
+  - 购买数量: int
+  - 成交单价: BigDecimal
+  - 售后声明: boolean
+  - 总金额: BigDecimal
+  + 确认交易方式(): void
+  + 申请取消(): void
+  + 确认收货(): void
+}
+
+abstract class "支付记录" as Payment {
+  - 金额: BigDecimal
+  - 状态: PaymentStatus
+  + 是否已付款(): boolean
+}
+
+class "线上支付" as OnlinePayment {
+  - 渠道: String
+  - 结算状态: SettlementStatus
+  + 处理支付结果(): void
+  + 收货后结算(): void
+  + 原路退款(): void
+}
+
+class "线下付款" as OfflinePayment {
+  - 卖家确认时间: Instant
+  + 卖家确认收款(): void
+}
+
+class "代交任务" as DeliveryTask {
+  - 代交人编号: UUID
+  - 状态: DeliveryStatus
+  + 记录取件(): void
+  + 记录交件(): void
+  + 记录失败(): void
+}
+
+class "售后申请" as AfterSaleRequest {
+  - 退货数量: int
+  - 退款金额: BigDecimal
+  - 状态: AfterSaleStatus
+  + 提交申请(): void
+  + 处理申请(): void
+  + 验收退货(): void
+}
+
+class "举报" as Report {
+  - 目标类型: ReportTargetType
+  - 目标编号: UUID
+  - 原因: String
+  - 状态: ReportStatus
+  + 提交(): void
+  + 处理(): void
+}
+
+User "1" -- "0..*" Product : 发布 >
+User "1" -- "0..*" Reservation : 发起 >
+User "1" -- "0..*" Report : 提交 >
+Product "1" -- "0..*" Reservation : 被预约 >
+Reservation "1" -- "1" Order : 对应 >
+Order "1" -- "0..*" Payment : 支付记录 >
+Order "1" -- "0..*" DeliveryTask : 代交任务 >
+Order "1" -- "0..*" AfterSaleRequest : 售后记录 >
+Payment <|-- OnlinePayment
+Payment <|-- OfflinePayment
 @enduml
