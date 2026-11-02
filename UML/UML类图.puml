@@ -1,5 +1,5 @@
 @startuml
-' v0.2: simplified by AI following the user's reference and review.
+' v0.3: user-reviewed collections, participants and platform registry.
 !pragma layout smetana
 title 校园二手交易系统类图
 skinparam defaultFontName Microsoft YaHei
@@ -9,50 +9,78 @@ skinparam roundcorner 0
 skinparam classBackgroundColor #F1F1F1
 skinparam classBorderColor #777777
 skinparam ArrowColor #333333
-skinparam nodesep 40
-skinparam ranksep 55
+skinparam nodesep 35
+skinparam ranksep 45
+
+class "交易平台" as CampusMarket {
+  - 用户: Map<UUID, User>
+  - 商品: Map<UUID, Product>
+  - 预约: Map<UUID, Reservation>
+  - 订单: Map<UUID, Order>
+  + 注册用户(邮箱: String): User
+  + 查找用户(id: UUID): User
+  + 查询商品(条件): List<Product>
+}
 
 class "用户" as User {
   - 邮箱: String
   - 角色集合: Set<Role>
+  - 发布商品: List<Product>
+  - 买方预约: List<Reservation>
+  - 卖方预约: List<Reservation>
+  - 代交任务: List<DeliveryTask>
   + 登录(): void
-  + 检查权限(): boolean
+  + 检查权限(操作): boolean
+  + 查询可售商品(): List<Product>
+  + 查询售后(买卖身份): List<AfterSaleRequest>
+  + 查询本人举报(): List<Report>
 }
 
 class "商品" as Product {
+  - 发布者: User
   - 名称: String
   - 单价: BigDecimal
   - 可用数量: int
   - 状态: ProductStatus
   - 交易类型: TradeType
-  - 售后支持: boolean
+  - 售后声明: AfterSalePolicy
+  - 预约记录: List<Reservation>
+  - 举报记录: List<Report>
   + 编辑(): void
   + 提交审核(): void
-  + 审核(通过: boolean): void
+  + 审核(管理员: User, 结论): void
   + 下架(): void
 }
 
 class "预约" as Reservation {
+  - 买方: User
+  - 商品: Product
+  - 对应订单: Order
   - 数量: int
   - 卖家答复: SellerDecision
   - 确认截止时间: Instant
-  + 发起(): void
-  + 接受(): void
-  + 拒绝(): void
+  + 接受(卖家: User): void
+  + 拒绝(卖家: User): void
 }
 
 class "订单" as Order {
+  - 买方: User
+  - 卖方: User
+  - 商品: Product
+  - 成交快照: OrderSnapshot
+  - 付款方式: PaymentMethod
+  - 交付方式: DeliveryMethod
+  - 收货时间: Instant [0..1]
   - 状态: OrderStatus
-  - 购买数量: int
-  - 成交单价: BigDecimal
-  - 售后声明: boolean
-  - 总金额: BigDecimal
-  + 确认交易方式(): void
-  + 申请取消(): void
-  + 确认收货(): void
+  - 售后申请: List<AfterSaleRequest>
+  - 举报记录: List<Report>
+  + 确认交易方式(参与人: User): void
+  + 申请取消(参与人: User): void
+  + 确认收货(买家: User): void
 }
 
 abstract class "支付记录" as Payment {
+  - 原订单: Order
   - 金额: BigDecimal
   - 状态: PaymentStatus
   + 是否已付款(): boolean
@@ -60,51 +88,71 @@ abstract class "支付记录" as Payment {
 
 class "线上支付" as OnlinePayment {
   - 渠道: String
+  - 环境: PaymentEnvironment
   - 结算状态: SettlementStatus
-  + 处理支付结果(): void
+  + 记录支付结果(): void
   + 收货后结算(): void
   + 原路退款(): void
 }
 
 class "线下付款" as OfflinePayment {
-  - 卖家确认时间: Instant
-  + 卖家确认收款(): void
+  - 确认卖家: User
+  - 确认时间: Instant [0..1]
+  + 确认收款(卖家: User): void
 }
 
 class "代交任务" as DeliveryTask {
-  - 代交人编号: UUID
+  - 原订单: Order
+  - 代交人: User
+  - 分配管理员: User
   - 状态: DeliveryStatus
-  + 记录取件(): void
-  + 记录交件(): void
-  + 记录失败(): void
+  + 记录取件(代交人: User): void
+  + 记录交件(代交人: User): void
+  + 记录失败(代交人: User, 原因): void
 }
 
 class "售后申请" as AfterSaleRequest {
+  - 原订单: Order
+  - 申请买家: User
+  - 介入管理员: User [0..1]
   - 退货数量: int
   - 退款金额: BigDecimal
+  - 申请时间: Instant
   - 状态: AfterSaleStatus
-  + 提交申请(): void
-  + 处理申请(): void
-  + 验收退货(): void
+  + 卖家答复(卖家: User, 结论): void
+  + 管理员核查(管理员: User, 结论): void
+  + 验收退货(卖家: User): void
 }
 
 class "举报" as Report {
-  - 目标类型: ReportTargetType
-  - 目标编号: UUID
+  - 举报人: User
+  - 处理管理员: User [0..1]
+  - 商品目标: Product [0..1]
+  - 订单目标: Order [0..1]
   - 原因: String
   - 状态: ReportStatus
-  + 提交(): void
-  + 处理(): void
+  + 记录处理结果(管理员: User, 结论): void
 }
 
-User "1" -- "0..*" Product : 发布 >
-User "1" -- "0..*" Reservation : 发起 >
-User "1" -- "0..*" Report : 提交 >
-Product "1" -- "0..*" Reservation : 被预约 >
-Reservation "1" -- "1" Order : 对应 >
-Order "1" -- "0..*" Payment : 支付记录 >
-Order "1" -- "0..*" DeliveryTask : 代交任务 >
-Order "1" -- "0..*" AfterSaleRequest : 售后记录 >
+CampusMarket "1" -right- "0..*" User : 管理 >
+User "1" -right- "0..*" Product : 发布 >
+User "1" -down- "0..*" Reservation : 发起（买方） >
+Product "1" -down- "0..*" Reservation : 被预约 >
+Reservation "1" -right- "1" Order : 对应 >
+User "1" -down- "0..*" DeliveryTask : 执行 >
+User "1" -down- "0..*" AfterSaleRequest : 申请 >
+Order "1" -right- "0..*" Payment : 支付记录 >
+Order "1" -down- "0..*" DeliveryTask : 代交记录 >
+Order "1" -down- "0..*" AfterSaleRequest : 售后记录 >
+Product "0..1" -right- "0..*" Report : 被举报 >
+Order "0..1" -up- "0..*" Report : 被举报 >
 Payment <|-- OnlinePayment
 Payment <|-- OfflinePayment
+note bottom of Report
+  商品目标和订单目标恰有一个非空。
+end note
+legend bottom
+  关联成员与连线引用同一条记录；卖方预约通过商品发布者确定。
+  OrderSnapshot 为不可变值对象，包含商品名、单价、数量、总额、交易类型及售后声明。
+endlegend
 @enduml
