@@ -1,0 +1,74 @@
+package "支付、结算与退款 finance" #F5F3FF {
+  abstract class "支付记录\nPaymentRecord" as PaymentRecord <<entity>> {
+    - 支付编号: UUID
+    - 订单编号: UUID
+    - 金额: BigDecimal
+    - 支付状态: PaymentStatus
+    - 创建时间: Instant
+    - 支付确认时间: Instant [0..1]
+    + 是否成功(): boolean
+  }
+  class "线上支付\nOnlinePayment" as OnlinePayment <<entity>> {
+    - 支付请求幂等键: String {unique}
+    - 支付渠道: String
+    - 运行环境: PaymentEnvironment
+    - 渠道支付单号: String [0..1] {unique per channel/env}
+    - 成功通知编号: String [0..1]
+    - 失败原因: String [0..1]
+    + 记录核验后的渠道结果(result): void
+  }
+  class "线下付款确认\nOfflinePayment" as OfflinePayment <<entity>> {
+    - 确认卖家编号: UUID [0..1]
+    - 确认请求幂等键: String [0..1]
+    + 卖家确认收款(sellerId, now): void
+  }
+  class "结算记录\nSettlement" as Settlement <<entity>> {
+    - 结算编号: UUID
+    - 订单编号: UUID
+    - 收款卖家编号: UUID
+    - 结算幂等键: String {unique}
+    - 金额: BigDecimal
+    - 结算状态: SettlementStatus
+    - 渠道结算单号: String [0..1]
+    - 成功时间: Instant [0..1]
+    - 最近失败原因: String [0..1]
+    + 记录结算结果(result): void
+  }
+  class "退款记录\nRefund" as Refund <<aggregate root>> {
+    - 退款编号: UUID
+    - 订单编号: UUID
+    - 原支付编号: UUID
+    - 退款幂等键: String {unique}
+    - 触发原因: RefundReason
+    - 来源记录编号: UUID [0..1]
+    - 退款方式: RefundMethod
+    - 退款金额: BigDecimal
+    - 退货数量: int
+    - 退款状态: RefundStatus
+    - 渠道退款单号: String [0..1]
+    - 最近失败原因: String [0..1]
+    - 买家确认收款时间: Instant [0..1]
+    - 成功时间: Instant [0..1]
+    - 版本号: long
+    + 保持处理中(reason): void
+    + 记录线上退款结果(result): void
+    + 买家确认线下退款(buyerId, now): void
+  }
+  class "卖方返款记录\nSellerFundReturn" as SellerFundReturn <<entity>> {
+    - 返款编号: UUID
+    - 结算编号: UUID
+    - 退款编号: UUID
+    - 返款幂等键: String {unique}
+    - 金额: BigDecimal
+    - 到账状态: FundReturnStatus
+    - 渠道返款单号: String [0..1]
+    - 实际到账时间: Instant [0..1]
+    + 确认资金到账(result): void
+  }
+  PaymentRecord <|-- OnlinePayment
+  PaymentRecord <|-- OfflinePayment
+  OnlinePayment "1" -- "0..1" Settlement : 收货后结算
+  PaymentRecord "1" <-- "0..*" Refund : 退款针对原支付
+  Settlement "1" -- "0..*" SellerFundReturn : 已结算货款返还
+  Refund "1" -- "0..1" SellerFundReturn : 已结算时先返款
+}

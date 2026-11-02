@@ -1,0 +1,26 @@
+@startuml
+!include model/style.iuml
+title 校园二手交易系统 · UML 类图（AI 初稿 v0.1）\n主要实体关系总览，完整属性与操作见 01—07 详图
+!include model/identity.iuml
+!include model/catalog.iuml
+!include model/trade.iuml
+!include model/finance.iuml
+!include model/fulfillment.iuml
+!include model/governance.iuml
+hide members
+User "1" <-- "0..*" Product : 卖家编号
+Product "1" <-- "0..*" Reservation : 预约商品
+Order "1" -- "0..*" PaymentRecord : 支付尝试
+Order "1" -- "0..*" DeliveryTask : 代交历史
+Order "1" -- "0..*" AfterSaleRequest : 独立售后
+AfterSaleRequest "0..1" -- "0..1" Refund : 售后来源
+ReturnInspection "0..1" -- "0..1" ReturnedLot : 售后退回来源
+User -[hidden]down-> Report
+legend bottom
+  实线：业务关联（跨模块通常保存 UUID）；黑菱形：整体拥有的组成部分
+  空心三角：继承；虚线箭头：依赖；0..1：可选一个；0..*：可有多个
+  每个举报只关联一种目标；每笔退款只适用一种来源规则，详见设计说明
+  买家、卖家、管理员、代交人、举报目标等编号关联在各领域详图中标明
+  普通角色可兼任；本图不以继承表达买家与卖家
+endlegend
+@enduml

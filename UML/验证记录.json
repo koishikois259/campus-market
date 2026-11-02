@@ -1,0 +1,94 @@
+{
+  "version": "AI initial draft v0.1",
+  "date": "2026-11-02",
+  "plantuml_version": "1.2026.8",
+  "java_version": "Temurin 17.0.20.1",
+  "layout_engine": "Smetana",
+  "domain_class_count": 34,
+  "unique_domain_aliases": true,
+  "mapped_requirements": [
+    "REQ-001",
+    "REQ-002",
+    "REQ-003",
+    "REQ-004",
+    "REQ-005",
+    "REQ-006",
+    "REQ-007",
+    "REQ-008",
+    "REQ-009",
+    "REQ-010",
+    "REQ-011",
+    "REQ-012",
+    "REQ-013",
+    "REQ-014",
+    "REQ-015",
+    "REQ-016",
+    "REQ-017",
+    "REQ-018",
+    "REQ-019",
+    "REQ-020",
+    "REQ-021",
+    "REQ-022",
+    "REQ-023",
+    "REQ-024",
+    "REQ-025",
+    "REQ-026",
+    "REQ-027",
+    "REQ-028"
+  ],
+  "all_local_includes_resolved": true,
+  "syntax_check_exit_code": 0,
+  "png_and_svg_render_exit_code": 0,
+  "visual_review": "All eight PNG views inspected; overview simplified to reduce crossing lines.",
+  "scope_limit": "Diagram and traceability checks only; no implementation or runtime business tests performed.",
+  "views": [
+    {
+      "source": "01_用户与权限类图.puml",
+      "png_width": 1061,
+      "png_height": 763,
+      "svg": "01_用户与权限类图.svg"
+    },
+    {
+      "source": "02_商品与库存类图.puml",
+      "png_width": 1657,
+      "png_height": 1140,
+      "svg": "02_商品与库存类图.svg"
+    },
+    {
+      "source": "03_预约与订单类图.puml",
+      "png_width": 1356,
+      "png_height": 1350,
+      "svg": "03_预约与订单类图.svg"
+    },
+    {
+      "source": "04_支付结算退款类图.puml",
+      "png_width": 1249,
+      "png_height": 1711,
+      "svg": "04_支付结算退款类图.svg"
+    },
+    {
+      "source": "05_交付与售后类图.puml",
+      "png_width": 1719,
+      "png_height": 986,
+      "svg": "05_交付与售后类图.svg"
+    },
+    {
+      "source": "06_治理日志统计类图.puml",
+      "png_width": 1958,
+      "png_height": 880,
+      "svg": "06_治理日志统计类图.svg"
+    },
+    {
+      "source": "07_服务职责与接口类图.puml",
+      "png_width": 2883,
+      "png_height": 877,
+      "svg": "07_服务职责与接口类图.svg"
+    },
+    {
+      "source": "UML类图.puml",
+      "png_width": 2258,
+      "png_height": 1379,
+      "svg": "UML类图.svg"
+    }
+  ]
+}

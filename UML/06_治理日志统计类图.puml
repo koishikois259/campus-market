@@ -1,0 +1,25 @@
+@startuml
+!include model/style.iuml
+title 06 治理、日志与统计类图 · AI 初稿 v0.1
+!include model/governance.iuml
+note bottom of Restriction
+  账号限制与商品限制继承共同的原因、期限、设置和解除记录。
+  限制与解除均由管理员操作；到期进入待核查，不能由普通用户解除。
+  限制商品阻止新预约，已有订单与付款历史保持可追溯。
+end note
+note bottom of Report
+  目标为 PRODUCT 或 ORDER，目标编号只引用一个具体对象。
+  受理时检查目标存在、处理人管理员权限。
+end note
+note bottom of AuditLog
+  USER 操作者有用户编号，SYSTEM 操作者有自动任务代码。
+  失败、拒绝、超时提醒等同样记录；日志至少保留 180 天。
+  日志仅追加，查询按权限过滤；本期不提供导出功能。
+end note
+note bottom of TradeStatistics
+  从已完成订单及成功售后退款聚合，避免重复维护另一份成交真相。
+  净售卖数量 = 原售卖成交数量 - 成功售后退货数量。
+  净售卖金额 = 原售卖成交金额 - 成功售后退款金额。
+  赠送单独统计；售后不改写原成交数量和金额。
+end note
+@enduml

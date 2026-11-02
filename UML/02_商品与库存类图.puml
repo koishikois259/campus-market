@@ -1,0 +1,22 @@
+@startuml
+!include model/style.iuml
+title 02 商品与库存类图 · AI 初稿 v0.1
+!include model/catalog.iuml
+note bottom of Product
+  交易类型 = SALE / GIFT；赠送金额为 0，售卖单价 > 0。
+  售后声明 = UNDECLARED / SUPPORTED / NOT_SUPPORTED。
+  售卖发布前必须声明；图片最多 9 张，单张最多 5MB，JPG/PNG。
+  有有效预约或进行中订单时，修改与下架由服务层拒绝。
+end note
+note bottom of Inventory
+  可售数量、预约占用数量、累计发出数量分别维护。
+  数量不得为负；占用、预约、订单创建在同一事务内提交。
+  释放占用以预约状态为幂等依据，不能只靠加减数量。
+  商品发布状态与可售数量共同决定能否预约。
+end note
+note bottom of ReturnedLot
+  退回验收不等于重新上架，退款成功也不直接增加可售数量。
+  仅完好且重新审核通过的批次可入可售，批次只能入库一次。
+  损坏、丢失进入异常处理，不自动生成赔偿金额。
+end note
+@enduml

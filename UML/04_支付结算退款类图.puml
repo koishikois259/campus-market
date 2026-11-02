@@ -1,0 +1,26 @@
+@startuml
+!include model/style.iuml
+title 04 支付、结算与退款类图 · AI 初稿 v0.1
+!include model/finance.iuml
+note bottom of PaymentRecord
+  支付记录为抽象父类，线上渠道付款和线下卖家确认是两种子类。
+  赠送没有支付记录；订单可有多次失败尝试，最多一笔有效成功付款。
+  线上实收重复或超时后的迟到款，保留真实渠道事实并退款，不能丢弃。
+end note
+note bottom of Settlement
+  只有有效订单确认收货后才可向卖家结算。
+  结算失败保持待处理，管理员可重试，不能多次转款。
+  环境随线上支付区分 MOCK / LIVE，模拟成功不代表真实到账。
+end note
+note bottom of Refund
+  售后退款须批准并退货验收；部分退货按原单价计算。
+  失败保持 PROCESSING，保存原因并提醒管理员；成功后才扣减统计。
+  ONLINE_ORIGINAL 只关联线上支付；OFFLINE_CONFIRM 由买家确认收到。
+  同一支付累计退款金额不得超过实收金额。
+  来源为售后、异常取消或迟到支付之一，必须与原订单相符。
+end note
+note bottom of SellerFundReturn
+  原线上货款已结算时，先确认卖家返款到账，再向买家退款。
+  未到账保持退款处理中，不假定平台垫付。
+end note
+@enduml

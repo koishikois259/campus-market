@@ -1,0 +1,16 @@
+@startuml
+!include model/style.iuml
+title 01 用户与权限类图 · AI 初稿 v0.1
+!include model/identity.iuml
+note bottom of RoleGrant
+  RoleCode = BUYER / SELLER / COURIER / ADMIN
+  同一用户可有多个有效角色授权。
+  普通注册只建立普通买卖权限；管理员不能自助注册。
+  代交授权、管理员配置须由授权入口执行并记录日志。
+end note
+note bottom of EmailChallenge
+  验证码保存摘要，5 分钟有效，错误 5 次失效。
+  同一邮箱发送间隔至少 60 秒，发送与核验均需并发控制。
+  本期采用邮箱验证码登录，不额外假定密码登录。
+end note
+@enduml

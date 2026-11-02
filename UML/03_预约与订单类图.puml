@@ -1,0 +1,24 @@
+@startuml
+!include model/style.iuml
+title 03 预约与订单类图 · AI 初稿 v0.1
+!include model/trade.iuml
+note bottom of TradeAgreement
+  同一订单最多一个当前有效方案，双方须确认同一版本。
+  线上售卖 / 赠送可见面或代交；线下付款只能见面。
+  赠送使用 NONE 付款方式，不进入待付款。
+  改约见面须双方确认，并停止原代交任务。
+end note
+note bottom of Order
+  待确认 / 待付款 / 待交付 / 交付中 / 已完成 / 已取消。
+  收货与线下付款确认可先后发生，满足全部条件才完成。
+  待卖家确认 24 小时、待线上付款 30 分钟超时自动取消。
+  已接受预约不能通过“拒绝”绕过普通取消协商。
+  已完成保持原状态，售后另建记录；迟到付款不恢复订单。
+end note
+note bottom of CancellationRequest
+  售卖未付款普通取消须双方同意，执行时再次检查未付款。
+  已付款拒绝普通取消；单方申请不释放库存且不暂停计时。
+  卖家拒绝待处理预约、系统超时为无需双方同意的例外。
+  赠送取件前可取消，取件后异常须管理员处理。
+end note
+@enduml
