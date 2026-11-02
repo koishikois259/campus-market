@@ -1,0 +1,67 @@
+@startuml
+' Order state diagram AI draft v0.1, 2026-11-03.
+' Reference: https://plantuml.com/zh/state-diagram
+!pragma layout smetana
+title 校园二手交易系统订单状态图 初稿
+hide empty description
+skinparam defaultFontName Microsoft YaHei
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam stateBackgroundColor #F5F5F5
+skinparam stateBorderColor #777777
+skinparam ArrowColor #333333
+skinparam noteBackgroundColor #FAFAFA
+skinparam noteBorderColor #999999
+skinparam noteFontSize 12
+skinparam nodesep 28
+skinparam ranksep 35
+
+state "进行中订单" as Active {
+  state "待确认" as Pending
+  state "待付款" as WaitingPayment
+  state "待交付" as Ready
+  state "交付中" as Delivering
+
+  [*] --> Pending
+  Pending --> WaitingPayment : 卖家接受且双方确认\n[线上售卖方案]
+  Pending --> Ready : 卖家接受且双方确认\n[线下见面或赠送方案]
+  WaitingPayment --> Ready : 有效订单付款成功
+  Ready --> Delivering : 代交人取件\n[线上已付款或赠送]
+  Delivering --> Ready : 代交失败且双方改约见面\n/ 停止原代交任务
+}
+
+state "已完成" as Completed
+state "已取消" as Cancelled
+
+[*] --> Active : 预约成功\n/ 占用库存并保存订单快照
+Ready --> Completed : 付款或收货确认\n[见面交付且完成条件齐备]
+Delivering --> Completed : 接收方确认收货\n[已交件且完成条件齐备]
+Pending --> Cancelled : 卖家拒绝待处理预约\n或满24小时仍未接受
+WaitingPayment --> Cancelled : 待付款满30分钟仍未付款
+Active --> Cancelled : 请求取消\n[符合阶段规则]
+Completed --> [*]
+Cancelled --> [*]
+
+note left of Cancelled
+  阶段取消规则
+  未付款售卖：双方同意。
+  赠送：取件前可取消。
+  已付款售卖或已取件赠送：
+  仅管理员核实异常后处理；
+  已取件还须先核实退回。
+  未发出占用仅释放一次。
+end note
+
+note right of Completed
+  付费订单：已付款且已收货。
+  赠送订单：已收货。
+  代交还须已交件。
+  售后另建记录，订单不回退。
+end note
+
+legend bottom
+  箭头：状态转换；[条件]：守卫；/ 后为转换动作。
+  已取消不等于已退款，迟到付款只触发独立退款。
+  退回商品须重新审核，不直接恢复可售库存。
+endlegend
+@enduml

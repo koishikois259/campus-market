@@ -1,0 +1,62 @@
+@startuml
+' Sequence diagram AI draft v0.1, 2026-11-03.
+' Reference: https://plantuml.com/zh/sequence-diagram
+title 线上付款与见面交付时序图 初稿
+autonumber
+hide footbox
+skinparam defaultFontName Microsoft YaHei
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam sequenceMessageAlign center
+skinparam sequenceParticipantBackgroundColor #F5F5F5
+skinparam sequenceParticipantBorderColor #777777
+skinparam sequenceLifeLineBorderColor #999999
+skinparam sequenceArrowColor #333333
+skinparam noteBackgroundColor #FAFAFA
+skinparam noteBorderColor #999999
+skinparam noteFontSize 12
+
+actor "买家" as Buyer
+actor "卖家" as Seller
+participant "平台后端" as App
+database "业务数据库" as DB
+participant "支付渠道\n初期模拟" as Channel
+
+== 预约与方案确认 ==
+Buyer -> App : 预约商品（数量、请求标识）
+critical 预约原子事务
+  App -> DB : 条件占用库存\n创建预约、订单及成交快照
+  DB --> App : 提交成功，返回订单
+end
+App --> Buyer : 预约成功，等待卖家确认
+Seller -> App : 接受预约
+App -> DB : 保存卖家接受结果
+Buyer -> App : 确认线上付款、见面交付
+Seller -> App : 确认同一交易方案
+App -> DB : 保存双方确认结果\n订单进入待付款
+
+== 线上付款与交付 ==
+Buyer -> App : 发起线上付款
+App -> Channel : 创建支付请求（金额、幂等键）
+Buyer -> Channel : 确认付款
+Channel -> App : 支付成功通知
+App -> App : 核验通知及当前订单状态
+App -> DB : 幂等记录付款成功\n转为待交付，资金待结算
+note over Buyer, Seller
+  双方见面交付商品。
+end note
+
+== 收货与结算 ==
+Buyer -> App : 确认收到商品
+App -> DB : 核对付款与收货条件\n完成订单，保存结算任务
+App --> Buyer : 订单已完成
+App -> Channel : 收货后向卖家结算（唯一幂等键）
+Channel --> App : 结算成功
+App -> DB : 记录结算成功
+
+legend bottom
+  本图展开一次有效线上见面交易，省略界面层和模块内部调用。
+  权限、商品版本及库存以服务端为准；重复预约返回原记录。
+  预约失败整体回滚；迟到付款、退款和代交分支另行展开。
+endlegend
+@enduml
