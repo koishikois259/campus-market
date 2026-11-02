@@ -1,5 +1,5 @@
 @startuml
-' v0.4: association-end member names replace repeated object fields.
+' v0.5: portrait layout for a standard A4 report page.
 ' Syntax reference: https://plantuml.com/zh/class-diagram
 !pragma layout smetana
 title 校园二手交易系统类图
@@ -11,8 +11,8 @@ skinparam roundcorner 0
 skinparam classBackgroundColor #F5F5F5
 skinparam classBorderColor #777777
 skinparam ArrowColor #333333
-skinparam nodesep 30
-skinparam ranksep 40
+skinparam nodesep 24
+skinparam ranksep 25
 
 class "交易平台" as CampusMarket {
   + 注册用户(): User
@@ -99,22 +99,23 @@ class "举报" as Report {
 
 ' Shared aggregation: collections of independently retained records.
 CampusMarket "1" o-right-> "0..*" User : -用户
-User "1" o-right-> "0..*" Product : -发布商品
+User "1" o-down-> "0..*" Product : -发布商品
 User "1" o-down-> "0..*" Reservation : -买方预约
-Product "1" -down-> "0..*" Reservation : -预约记录
-Reservation "1" -right-> "1" Order : -对应订单
+Product "1" -right-> "0..*" Reservation : -预约记录
+Reservation "1" -down-> "1" Order : -对应订单
 User "1" -down-> "0..*" DeliveryTask : -代交任务
-Order "1" o-right-> "0..*" Payment : -支付记录
+Order "1" o-down-> "0..*" Payment : -支付记录
 Order "1" -down-> "0..*" DeliveryTask : -代交记录
 Order "1" -down-> "0..*" AfterSaleRequest : -售后申请
-Product "0..1" -right-> "0..*" Report : -举报记录
-Order "0..1" -up-> "0..*" Report : -举报记录
+Product "0..1" -down-> "0..*" Report : -举报记录
+Order "0..1" -left-> "0..*" Report : -举报记录
 Payment <|-- OnlinePayment
 Payment <|-- OfflinePayment
 
 legend bottom
-  空心菱形：聚合，菱形端持有集合；实线箭头：可导航关联；空心三角：继承。
-  -成员名与多重性表示对象或集合成员；/ 表示可推导成员，类框不再重复列出。
-  举报仅关联商品或订单之一；卖方预约通过发布商品查询。
+  空心菱形：聚合；实线箭头：可导航关联；空心三角：继承。
+  -成员名和数量表示对象或集合成员；/ 表示推导成员。
+  举报仅关联商品或订单之一。
+  卖方预约通过发布商品查询。
 endlegend
 @enduml

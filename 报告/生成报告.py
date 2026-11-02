@@ -1,7 +1,7 @@
 """Build the class-design report from the Markdown source and current UML PNG.
 
 Run with the Codex bundled Python runtime (python-docx and Pillow required).
-The text page is A4; the diagram uses an A3 landscape foldout for readable type.
+All pages use A4 portrait; the diagram is proportionally fitted to its own page.
 """
 from pathlib import Path
 import re
@@ -143,17 +143,17 @@ def main():
             caption, relative_path = match.groups()
             figure = (ROOT / relative_path).resolve()
             foldout = doc.add_section(WD_SECTION_START.NEW_PAGE)
-            foldout.orientation = WD_ORIENT.LANDSCAPE
-            foldout.page_width, foldout.page_height = Cm(42), Cm(29.7)
-            foldout.top_margin, foldout.bottom_margin = Cm(1.3), Cm(1.3)
-            foldout.left_margin, foldout.right_margin = Cm(1.5), Cm(1.5)
+            foldout.orientation = WD_ORIENT.PORTRAIT
+            foldout.page_width, foldout.page_height = Cm(21), Cm(29.7)
+            foldout.top_margin, foldout.bottom_margin = Cm(1.2), Cm(1.2)
+            foldout.left_margin, foldout.right_margin = Cm(1.2), Cm(1.2)
             p = doc.add_paragraph()
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             p.paragraph_format.space_after = Pt(2)
             p.paragraph_format.line_spacing = 1
             with Image.open(figure) as image:
                 w, h = image.size
-            image_width = min(39, 25.7 * w / h)
+            image_width = min(18.6, 25.6 * w / h)
             picture = p.add_run().add_picture(str(figure), width=Cm(image_width))
             picture._inline.docPr.set('descr', '校园二手交易系统类图，含平台、用户、交易、支付、代交、售后及举报关系')
             p = doc.add_paragraph()
