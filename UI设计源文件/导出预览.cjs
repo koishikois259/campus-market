@@ -1,5 +1,5 @@
 // Rasterize the SVG design assets. This does not operate Pixso or a live browser.
-// Usage: node 导出预览.cjs [directory containing the sharp package]
+// Usage: node 导出预览.cjs [directory containing the sharp package] [version directory]
 const fs = require('fs');
 const path = require('path');
 const { createRequire } = require('module');
@@ -9,7 +9,8 @@ const requireLibrary = process.argv[2]
   ? createRequire(path.join(process.argv[2], '__ui_dependencies__.cjs'))
   : require;
 const sharp = requireLibrary('sharp');
-const manifest = JSON.parse(fs.readFileSync(path.join(sourceRoot, '初稿_v0.1', '画板清单.json'), 'utf8'));
+const versionDirectory = process.argv[3] || '初稿_v0.1';
+const manifest = JSON.parse(fs.readFileSync(path.join(sourceRoot, versionDirectory, '画板清单.json'), 'utf8'));
 
 (async () => {
   for (const page of manifest.pages) {

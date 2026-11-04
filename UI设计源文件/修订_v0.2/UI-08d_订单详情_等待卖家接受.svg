@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1100" viewBox="0 0 1440 1100">
+<title>订单详情：买方等待卖家接受</title>
+<desc>校园二手交易系统 UI v0.2 修订稿，白底黑字。可导入的矢量素材，样例数据均为虚构。</desc>
+<rect x="0" y="0" width="1440" height="1100" rx="0" fill="#FFFFFF"/>
+<line x1="80" y1="79" x2="1360" y2="79" stroke="#E7E7E7" stroke-width="1"/>
+<text x="80" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#171717" text-anchor="start">校园集市</text>
+<text x="324" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">商品广场</text>
+<text x="454" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">发布商品</text>
+<text x="584" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#171717" text-anchor="start">我的交易</text>
+<line x1="584" y1="78" x2="648" y2="78" stroke="#171717" stroke-width="2"/>
+<text x="1220" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" fill="#737373" text-anchor="end">邮箱已验证</text>
+<text x="1360" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="end">林同学</text>
+<text x="80" y="120" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#171717" text-anchor="start">我的交易  /  买方预约与待确认</text>
+<text x="80" y="168" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700" fill="#171717" text-anchor="start">订单详情</text>
+<rect x="234" y="141" width="84" height="28" rx="7" fill="#F7F7F7"/>
+<text x="276.0" y="160" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#515151" text-anchor="middle">待确认</text>
+<text x="1360" y="167" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="end">O20261104002</text>
+<rect x="80" y="200" width="1280" height="92" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<circle cx="124" cy="246" r="18" fill="#171717"/>
+<text x="124" y="252" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="600" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="158" y="252" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="600" fill="#171717" text-anchor="start">预约与方案确认</text>
+<circle cx="568" cy="246" r="18" fill="#F3F3F3"/>
+<text x="568" y="252" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="600" fill="#737373" text-anchor="middle">2</text>
+<text x="602" y="252" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="600" fill="#737373" text-anchor="start">付款与交付</text>
+<circle cx="1010" cy="246" r="18" fill="#F3F3F3"/>
+<text x="1010" y="252" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="600" fill="#737373" text-anchor="middle">3</text>
+<text x="1044" y="252" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="600" fill="#737373" text-anchor="start">收货与结算</text>
+<line x1="350" y1="246" x2="502" y2="246" stroke="#E7E7E7" stroke-width="1"/>
+<line x1="754" y1="246" x2="944" y2="246" stroke="#E7E7E7" stroke-width="1"/>
+<rect x="80" y="316" width="828" height="276" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="108" y="356" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="600" fill="#171717" text-anchor="start">预约商品</text>
+<text x="880" y="355" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" fill="#737373" text-anchor="end">下单时信息</text>
+<rect x="108" y="380" width="146" height="140" rx="12" fill="#ECEAE5"/>
+<g transform="translate(118.42857142857142 403.07142857142856) scale(0.5214285714285715)">
+<path d="M65 107 V83 C65 13 177 13 177 83 V108" fill="none" stroke="#575B58" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="48" y="88" width="40" height="69" rx="16" fill="#343C38"/>
+<rect x="153" y="88" width="40" height="69" rx="16" fill="#343C38"/>
+<rect x="56" y="98" width="19" height="48" rx="8" fill="#757D76"/>
+<rect x="166" y="98" width="19" height="48" rx="8" fill="#757D76"/>
+</g>
+<text x="278" y="411" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="600" fill="#171717" text-anchor="start">无线头戴式耳机</text>
+<text x="278" y="447" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#303030" text-anchor="start">售卖   ·   ¥45.00 × 1 件</text>
+<rect x="278" y="470" width="122" height="28" rx="7" fill="#F5F5F5"/>
+<text x="339.0" y="489" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#171717" text-anchor="middle">支持售后退款</text>
+<text x="278" y="526" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="start">二手 · 耳罩边缘轻微磨损，功能正常</text>
+<text x="880" y="412" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#171717" text-anchor="end">¥ 45.00</text>
+<line x1="108" y1="540" x2="880" y2="540" stroke="#E7E7E7" stroke-width="1"/>
+<text x="108" y="571" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="start">预约编号 R20261104002</text>
+<text x="880" y="571" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="end">预约时间 11-04 13:30</text>
+<rect x="80" y="616" width="828" height="132" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="108" y="655" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="600" fill="#171717" text-anchor="start">交易双方</text>
+<text x="108" y="702" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#303030" text-anchor="start">买家  林同学（我）</text>
+<text x="488" y="702" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#303030" text-anchor="start">卖家  陈同学</text>
+<rect x="80" y="772" width="828" height="214" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="108" y="812" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="600" fill="#171717" text-anchor="start">交易记录</text>
+<circle cx="114" cy="841" r="4" fill="#171717"/>
+<text x="137" y="846" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="start">13:30</text>
+<text x="209" y="846" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">预约成功，占用 1 件，等待卖家接受</text>
+<text x="880" y="967" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" fill="#737373" text-anchor="end">举报订单</text>
+<rect x="932" y="316" width="428" height="428" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="960" y="342" width="140" height="28" rx="7" fill="#F7F7F7"/>
+<text x="1030.0" y="361" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#515151" text-anchor="middle">等待卖家答复</text>
+<text x="960" y="408" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#171717" text-anchor="start">已提交预约，等待接受</text>
+<text x="960" y="447" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">接受截止：11 月 5 日 13:30</text>
+<text x="960" y="475" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">超过期限仍未接受，订单将自动取消。</text>
+<rect x="960" y="504" width="372" height="88" rx="10" fill="#F5F5F5"/>
+<text x="978" y="538" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#171717" text-anchor="start">接受后仍为待确认，</text>
+<text x="978" y="566" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#171717" text-anchor="start">双方确认同一方案后才能继续。</text>
+<rect x="960" y="620" width="372" height="48" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="1146.0" y="650.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">返回买方列表</text>
+<text x="960" y="707" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#171717" text-anchor="start">申请取消</text>
+<line x1="80" y1="1058" x2="1360" y2="1058" stroke="#E7E7E7" stroke-width="1"/>
+<text x="80" y="1082" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="400" fill="#737373" text-anchor="start">校园集市</text>
+</svg>
