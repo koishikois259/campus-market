@@ -1,5 +1,5 @@
 @startuml
-' Sequence diagram v0.3, essential payment branches after user review, 2026-11-04.
+' Sequence diagram v0.4, restored three-stage flow after user review, 2026-11-04.
 ' Reference: https://plantuml.com/zh/sequence-diagram
 title 线上付款与见面交付时序图 初稿
 autonumber
@@ -35,36 +35,27 @@ Buyer -> App : 确认线上付款、见面交付
 Seller -> App : 确认同一交易方案
 App -> DB : 保存双方确认结果\n进入待付款，记录起算时间
 
-== 付款结果与后续处理 ==
-opt 买家在付款时限内发起付款
-  Buyer -> App : 发起线上付款
-  App -> Channel : 创建支付请求（金额、幂等键）
-  Buyer -> Channel : 确认付款
-end
+== 线上付款与交付 ==
+Buyer -> App : 发起线上付款
+App -> Channel : 创建支付请求（金额、幂等键）
+Buyer -> Channel : 确认付款
+Channel -> App : 支付成功通知
+App -> App : 核验通知
+App -> DB : 校验状态并幂等记录付款\n转为待交付，资金待结算
+note over Buyer, Seller
+  双方见面交付商品。
+end note
 
-alt 付款成功且订单有效
-  Channel -> App : 支付成功通知
-  App -> App : 核验通知
-  App -> DB : 校验状态并幂等记录付款\n转为待交付，资金待结算
-  note over Buyer, Seller
-    双方见面交付商品。
-  end note
-  Buyer -> App : 确认收到商品
-  App -> DB : 核对付款与收货条件\n完成订单，保存结算任务
-  App --> Buyer : 订单已完成
-  App -> Channel : 收货后向卖家结算（唯一幂等键）
-  Channel --> App : 结算成功
-  App -> DB : 记录结算成功
-else 本次付款失败且未超时
-  Channel -> App : 付款失败结果
-  App --> Buyer : 仍待付款，允许重试
-else 待付款满30分钟仍未付款
-  App -> DB : 核验未付款并取消订单\n仅释放对应占用一次
-  App --> Buyer : 订单超时取消
-end
+== 收货与结算 ==
+Buyer -> App : 确认收到商品
+App -> DB : 核对付款与收货条件\n完成订单，保存结算任务
+App --> Buyer : 订单已完成
+App -> Channel : 收货后向卖家结算（唯一幂等键）
+Channel --> App : 结算成功
+App -> DB : 记录结算成功
 
 legend bottom
+  仅示线上付款、见面交付的正常流程。
   预约失败回滚；重复请求不重复占用或记账。
-  取消后的迟到付款进入退款处理，不恢复订单。
 endlegend
 @enduml
