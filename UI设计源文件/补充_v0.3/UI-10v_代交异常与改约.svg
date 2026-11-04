@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1180" viewBox="0 0 1440 1180">
+<title>无人代交 改约及取件后异常</title>
+<desc>校园二手交易系统补充模块初稿，白底黑字和彩色商品图。待审查，非真实业务。</desc>
+<rect x="0" y="0" width="1440" height="1180" rx="0" fill="#FFFFFF"/>
+<text x="80" y="80" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700" fill="#171717" text-anchor="start">代交异常与共同改约</text>
+<text x="80" y="120" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">不同分支的局部界面；双方改约与管理员异常处理分别执行。</text>
+<rect x="80" y="158" width="620" height="438" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="104" y="180" width="108" height="28" rx="7" fill="#F3F3F3"/>
+<text x="158.0" y="199" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">交易双方视角</text>
+<text x="104" y="252" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" fill="#171717" text-anchor="start">暂未分配到代交人</text>
+<text x="104" y="295" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">原订单保留，线上售卖已付款。</text>
+<text x="104" y="325" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">新方案：见面交付</text>
+<text x="104" y="355" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">买方已确认 · 卖方待确认</text>
+<rect x="108" y="476" width="564" height="46" rx="9" fill="#171717"/>
+<text x="390.0" y="505.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">确认新的见面方案</text>
+<text x="108" y="561" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="start">双方确认前，不按单方选择改变交付。</text>
+<rect x="740" y="158" width="620" height="438" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="764" y="180" width="122" height="28" rx="7" fill="#F3F3F3"/>
+<text x="825.0" y="199" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">双方已共同确认</text>
+<text x="764" y="252" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" fill="#171717" text-anchor="start">代交失败后改为见面</text>
+<text x="764" y="295" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">原订单与价格保持，订单回到待交付。</text>
+<text x="764" y="325" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">旧代交任务已停止，不得继续交件。</text>
+<text x="764" y="355" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">按双方确认的新方案交付。</text>
+<rect x="768" y="476" width="564" height="44" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="1050.0" y="504.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">查看交付与收货</text>
+<text x="768" y="561" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="start">页面仅展示改约生效后的结果。</text>
+<rect x="80" y="626" width="620" height="438" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="104" y="648" width="206" height="28" rx="7" fill="#F3F3F3"/>
+<text x="207.0" y="667" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">管理员视角 · 退回已核实</text>
+<text x="104" y="720" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" fill="#171717" text-anchor="start">核实后异常取消</text>
+<text x="104" y="763" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">已取件且无法交付，商品已核实退回。</text>
+<text x="104" y="793" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">记录核查原因与退回证据。</text>
+<text x="104" y="823" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">线上已付款¥30.00，取消后进入退款。</text>
+<rect x="108" y="944" width="564" height="46" rx="9" fill="#171717"/>
+<text x="390.0" y="973.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">确认异常取消并发起原路退款</text>
+<text x="108" y="1029" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="start">退回商品需重新审核，不直接恢复可售。</text>
+<rect x="740" y="626" width="620" height="438" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="764" y="648" width="94" height="28" rx="7" fill="#F3F3F3"/>
+<text x="811.0" y="667" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">代交人视角</text>
+<text x="764" y="720" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" fill="#171717" text-anchor="start">损坏或丢失，提交核查</text>
+<text x="764" y="763" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">异常原因：交付途中发现物品损坏。</text>
+<text x="764" y="793" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">保留当前状态和证据，通知管理员。</text>
+<text x="764" y="823" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">未核实退回时，禁止直接取消或恢复库存。</text>
+<rect x="768" y="944" width="564" height="46" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="1050.0" y="973.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">提交异常原因与证据</text>
+<text x="768" y="1029" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="start">不自动计算赔偿；赠送取件后同样须核查。</text>
+<line x1="80" y1="1138" x2="1360" y2="1138" stroke="#E7E7E7" stroke-width="1"/>
+<text x="80" y="1162" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="400" fill="#737373" text-anchor="start">校园集市</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1120" viewBox="0 0 1440 1120">
+<title>付款超时与结算的局部界面</title>
+<desc>校园二手交易系统补充模块初稿，白底黑字和彩色商品图。待审查，非真实业务。</desc>
+<rect x="0" y="0" width="1440" height="1120" rx="0" fill="#FFFFFF"/>
+<text x="80" y="80" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700" fill="#171717" text-anchor="start">付款与结算反馈</text>
+<text x="80" y="120" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">同一订单在不同结果下的分支示例；支付、退款和结算分别记录。</text>
+<rect x="80" y="158" width="620" height="396" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="104" y="180" width="66" height="28" rx="7" fill="#F3F3F3"/>
+<text x="137.0" y="199" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">未超时</text>
+<text x="104" y="252" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" fill="#171717" text-anchor="start">本次模拟付款失败</text>
+<text x="104" y="295" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">金额 ¥30.00 · 截止14:50</text>
+<text x="104" y="325" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">未扣款，订单仍为待付款。</text>
+<text x="104" y="355" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">保留原截止时间，刷新不重新计时。</text>
+<rect x="104" y="467" width="572" height="44" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="390.0" y="495.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">重新模拟付款</text>
+<rect x="740" y="158" width="620" height="396" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="764" y="180" width="66" height="28" rx="7" fill="#F3F3F3"/>
+<text x="797.0" y="199" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">已取消</text>
+<text x="764" y="252" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" fill="#171717" text-anchor="start">付款超时自动取消</text>
+<text x="764" y="295" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">14:20进入待付款，14:50仍未付。</text>
+<text x="764" y="325" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">订单已取消，占用已释放。</text>
+<text x="764" y="355" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">不能继续支付或交付。</text>
+<rect x="764" y="467" width="572" height="44" rx="9" fill="#F3F3F3"/>
+<text x="1050.0" y="495.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#A3A3A3" text-anchor="middle">已超时，不能继续付款</text>
+<rect x="80" y="588" width="620" height="396" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="104" y="610" width="178" height="28" rx="7" fill="#F3F3F3"/>
+<text x="193.0" y="629" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">买方视角 · 迟到付款</text>
+<text x="104" y="682" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" fill="#171717" text-anchor="start">订单已取消，退款处理中</text>
+<text x="104" y="725" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">取消后收到¥30.00成功付款结果。</text>
+<text x="104" y="755" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">按原支付退款，不恢复订单。</text>
+<text x="104" y="785" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">退款失败仍为处理中，转管理员处理。</text>
+<rect x="104" y="897" width="572" height="44" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="390.0" y="925.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">查看退款进度</text>
+<rect x="740" y="588" width="620" height="396" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="764" y="610" width="192" height="28" rx="7" fill="#F3F3F3"/>
+<text x="860.0" y="629" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">卖方视角 · 订单已完成</text>
+<text x="764" y="682" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" fill="#171717" text-anchor="start">结算失败，等待处理</text>
+<text x="764" y="725" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">买方已收货，订单保持已完成。</text>
+<text x="764" y="755" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">线上结算¥30.00失败，尚未到账。</text>
+<text x="764" y="785" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">管理员可重试，不能重复转款。</text>
+<rect x="764" y="897" width="572" height="44" rx="9" fill="#F3F3F3"/>
+<text x="1050.0" y="925.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#A3A3A3" text-anchor="middle">已通知管理员处理</text>
+<line x1="80" y1="1078" x2="1360" y2="1078" stroke="#E7E7E7" stroke-width="1"/>
+<text x="80" y="1102" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="400" fill="#737373" text-anchor="start">校园集市</text>
+</svg>
