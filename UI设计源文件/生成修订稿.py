@@ -375,7 +375,7 @@ def preview():
     target_dir=ROOT/'UI界面'/VERSION
     target_dir.mkdir(parents=True,exist_ok=True)
     template=(ROOT/'UI界面/初稿_v0.1/预览.html').read_text(encoding='utf-8')
-    template=template.replace('UI 初稿预览','UI 修订稿预览').replace('v0.1 · 待审查','v0.2 · 待复核')
+    template=template.replace('UI 初稿预览','UI 修订稿预览').replace('v0.1 · 待审查','v0.2 · 本轮已确认')
     template=template.replace('首轮画板 · 10 张',f'修订画板 · {len(PAGES)} 张')
     template=template.replace('双击画板切换适应宽度与 100%。','双击画板切换适应宽度与 100%。<br>点击画板入口可跳转列表和详情。')
     template=template.replace('<span class="spacer"></span>','<span class="spacer"></span><button id="workspace" type="button">回到工作台</button><label><input id="show-links" type="checkbox"> 显示跳转区域</label>')
@@ -448,7 +448,7 @@ if __name__=='__main__':
     base.Page=Page
     base.reservation_states();base.goods_states()
     cancel_states();queue('seller');queue('buyer');cancel_queue();order('waiting')
-    (OUT/'画板清单.json').write_text(json.dumps(dict(version='0.2',status='依据用户审查修改，待复核；待 Pixso 核对',pages=PAGES),
+    (OUT/'画板清单.json').write_text(json.dumps(dict(version='0.2',status='用户认可本轮修订，已按课程命名整理图片；待 Pixso 核对',pages=PAGES),
         ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
     preview()
     print(f'Generated {len(PAGES)} revised artboards and offline preview.')
