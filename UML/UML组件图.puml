@@ -1,8 +1,8 @@
 @startuml
-' Component diagram AI draft v0.1, 2026-11-02.
+' Component diagram v0.2, revised after user review, 2026-11-04.
 ' Reference: https://plantuml.com/zh/component-diagram
 !pragma layout smetana
-title 校园二手交易系统组件图 初稿
+title 校园二手交易系统组件图
 skinparam defaultFontName Microsoft YaHei
 skinparam defaultFontSize 14
 skinparam componentStyle uml2
@@ -15,47 +15,48 @@ skinparam interfaceBorderColor #777777
 skinparam packageStyle rectangle
 skinparam packageBackgroundColor #FFFFFF
 skinparam ArrowColor #444444
-skinparam nodesep 28
-skinparam ranksep 35
+skinparam nodesep 35
+skinparam ranksep 40
 
-component "用户界面\n买卖 / 代交 / 管理" as UI
-interface "业务接口" as BusinessAPI
+component "前端界面\n买卖 / 代交 / 管理入口" as UI
 
-package "Java 应用后端" as Backend {
-  component "应用入口\n请求处理 / 业务协调" as App
-  component "身份与权限\n邮箱登录 / 角色与归属" as Identity
-  package "业务模块" as Business {
-    component "商品与库存\n审核发布 / 查询 / 数量" as Catalog
-    component "预约与订单\n预约确认 / 取消 / 收货" as Trade
-    component "支付与退款\n付款 / 结算 / 退款" as Finance
-    component "交付与售后\n代交任务 / 退货验收" as Fulfillment
-    component "平台管理\n举报 / 日志 / 统计" as Governance
-    Trade .left.> Catalog : 占用 / 释放库存
-    Fulfillment .right.> Finance : 验收后申请退款
-    Catalog -[hidden]down-> Fulfillment
-    Trade -[hidden]down-> Finance
-    Fulfillment -[hidden]down-> Governance
-  }
-  App .left.> Identity : 权限检查
-  App .down.> Business : 分派业务请求
+package "后端业务模块（Java）" as Backend {
+  component "用户模块\n注册登录 / 角色权限" as User
+  component "平台管理模块\n举报 / 日志 / 统计" as Governance
+  component "预约模块\n发起预约 / 接受拒绝 / 方案确认" as Reservation
+  component "商品模块\n发布审核 / 查询 / 库存" as Catalog
+  component "订单模块\n交易快照 / 状态 / 取消 / 收货" as Order
+  component "支付模块\n付款 / 结算 / 退款" as Finance
+  component "代交模块\n任务分配 / 取件交件 / 异常" as Delivery
+  component "售后模块\n申请处理 / 争议介入 / 退货验收" as Aftersale
+
+  Governance .left.> User : 账号限制
+  Governance .down.> Catalog : 商品限制
+  Reservation .right.> Catalog : 检查 / 占用库存
+  Reservation .down.> Order : 建立订单
+  Order .right.> Finance : 核验付款 / 发起结算
+  Delivery .up.> Order : 核验条件 / 更新交付
+  Aftersale .up.> Finance : 验收后申请退款
+  Aftersale .up.> Order : 核对原交易
+
+  User -[hidden]down-> Reservation
+  Catalog -[hidden]down-> Finance
+  Delivery -[hidden]right-> Aftersale
 }
 
 component "邮箱服务" as MailProvider <<external>>
-component "支付渠道\n初期使用模拟渠道" as PaymentProvider <<external>>
+component "支付渠道\n初期模拟" as PaymentProvider <<external>>
 database "业务数据库\n用户 / 商品 / 交易 / 日志" as DB
 
-UI .down.> BusinessAPI : 调用
-BusinessAPI -down- App
-Identity .down.> MailProvider : 验证码接口
-Finance .down.> PaymentProvider : 通用支付接口
-Business .down.> DB : 按模块持久化 / 事务
-Identity .down.> DB : 用户与授权
-MailProvider -[hidden]right-> DB
-DB -[hidden]right-> PaymentProvider
+UI .down.> Backend : 调用业务接口
+User .up.> MailProvider : 发送验证码
+Finance .right.> PaymentProvider : 支付 / 结算 / 退款
+Backend .down.> DB : 数据持久化 / 事务
+MailProvider -[hidden]right-> UI
 
 legend bottom
-  组件框：职责模块；圆形：接口；圆柱：数据存储。
-  虚线箭头由调用方指向依赖方，不表示交易步骤的先后。
-  各模块通过自己的数据访问代码使用同一数据库。
+  主体：八个后端业务模块；外围：前端、数据库、外部服务。
+  虚线箭头由依赖方指向被依赖方，仅展示主要依赖。
+  各模块统一校验角色与资源归属，通过各自的数据访问代码使用数据库。
 endlegend
 @enduml
