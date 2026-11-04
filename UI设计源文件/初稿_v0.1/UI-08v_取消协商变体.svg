@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000">
+<title>取消申请与对方处理的局部画板</title>
+<desc>校园二手交易系统 UI 初稿，可导入 Pixso 的矢量画板。样例数据均为虚构。</desc>
+<rect x="0" y="0" width="1440" height="1000" rx="0" fill="#F5F7F4"/>
+<text x="80" y="80" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700" fill="#18372D" text-anchor="start">取消协商</text>
+<text x="80" y="114" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#67766C" text-anchor="start">同一未付款售卖订单的不同视角</text>
+<rect x="80" y="156" width="620" height="660" rx="16" fill="#FFFFFF" stroke="#E1E8E1"/>
+<text x="108" y="202" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#18372D" text-anchor="start">申请取消订单</text>
+<text x="108" y="240" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="400" fill="#344D42" text-anchor="start">高等数学教材（上册） · 3 件 · ¥30.00</text>
+<text x="108" y="276" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#67766C" text-anchor="start">订单 O20261104001</text>
+<text x="108" y="326" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#344D42" text-anchor="start">取消原因 *</text>
+<rect x="108" y="344" width="564" height="120" rx="8" fill="#FFFFFF" stroke="#E1E8E1"/>
+<text x="122" y="376" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#344D42" text-anchor="start">临时调整了学习计划，</text>
+<text x="122" y="404" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#344D42" text-anchor="start">希望与卖家协商取消本次交易。</text>
+<rect x="108" y="490" width="564" height="112" rx="10" fill="#FFF5E5"/>
+<text x="126" y="524" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#9B621B" text-anchor="start">对方同意后才会取消订单并释放占用。</text>
+<text x="126" y="553" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#9B621B" text-anchor="start">申请期间订单状态和库存占用保持不变，</text>
+<text x="126" y="582" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#9B621B" text-anchor="start">原有超时倒计时继续。</text>
+<rect x="108" y="638" width="564" height="48" rx="9" fill="#187559"/>
+<text x="390.0" y="668.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">提交取消申请</text>
+<rect x="108" y="702" width="564" height="44" rx="9" fill="#FFFFFF" stroke="#E1E8E1"/>
+<text x="390.0" y="730.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#344D42" text-anchor="middle">暂不申请</text>
+<rect x="740" y="156" width="620" height="302" rx="16" fill="#FFFFFF" stroke="#E1E8E1"/>
+<rect x="768" y="180" width="100" height="28" rx="7" fill="#EFF2EF"/>
+<text x="818.0" y="199" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#67766C" text-anchor="middle">买家视角</text>
+<text x="768" y="247" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#18372D" text-anchor="start">已提交取消申请</text>
+<text x="768" y="287" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#67766C" text-anchor="start">等待卖家答复，原订单仍为待确认。</text>
+<text x="768" y="315" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#67766C" text-anchor="start">预约占用 3 件尚未释放。</text>
+<rect x="768" y="369" width="564" height="48" rx="9" fill="#FFFFFF" stroke="#E1E8E1"/>
+<text x="1050.0" y="399.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#344D42" text-anchor="middle">返回订单</text>
+<rect x="740" y="482" width="620" height="334" rx="16" fill="#FFFFFF" stroke="#E1E8E1"/>
+<rect x="768" y="506" width="100" height="28" rx="7" fill="#EFF2EF"/>
+<text x="818.0" y="525" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#67766C" text-anchor="middle">卖家视角</text>
+<text x="768" y="574" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#18372D" text-anchor="start">周同学申请取消</text>
+<text x="768" y="616" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#67766C" text-anchor="start">原因：学习计划调整，希望协商取消。</text>
+<text x="768" y="644" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#67766C" text-anchor="start">同意时将再次核对订单是否尚未付款。</text>
+<rect x="768" y="705" width="270" height="48" rx="9" fill="#187559"/>
+<text x="903.0" y="735.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">同意取消</text>
+<rect x="1054" y="705" width="278" height="48" rx="9" fill="#FFFFFF" stroke="#E1E8E1"/>
+<text x="1193.0" y="735.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#344D42" text-anchor="middle">拒绝申请</text>
+<line x1="80" y1="942" x2="1360" y2="942" stroke="#E1E8E1" stroke-width="1"/>
+<text x="80" y="972" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" fill="#67766C" text-anchor="start">校园集市 · 校内闲置交易</text>
+<text x="1360" y="972" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" fill="#67766C" text-anchor="end">让闲置继续被需要</text>
+</svg>
