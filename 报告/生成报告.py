@@ -124,6 +124,7 @@ def main():
     lines = SOURCE.read_text(encoding='utf-8').splitlines()
     i = 0
     figure_page = False
+    figure_width = None
     while i < len(lines):
         line = lines[i].strip()
         i += 1
@@ -131,6 +132,10 @@ def main():
             continue
         if line == '<!-- figure-page -->':
             figure_page = True
+            continue
+        elif line.startswith('<!-- figure-width:'):
+            figure_width = float(line.removeprefix('<!-- figure-width:').removesuffix('-->').strip())
+            assert figure_width > 0
             continue
         elif line == '<!-- page-break -->':
             section = new_section(doc)
@@ -169,7 +174,8 @@ def main():
             with Image.open(figure) as image:
                 w, h = image.size
             available_width = (section.page_width - section.left_margin - section.right_margin) / Cm(1)
-            image_width = min(available_width, 25.6 * w / h)
+            image_width = min(available_width, figure_width or available_width, 25.6 * w / h)
+            figure_width = None
             picture = p.add_run().add_picture(str(figure), width=Cm(image_width))
             picture._inline.docPr.set('descr', caption)
             p = doc.add_paragraph()
@@ -188,7 +194,7 @@ def main():
                 font(p.add_run(line))
     doc.core_properties.author = '贾一帆'
     doc.core_properties.title = '校园二手交易系统实验二报告'
-    doc.core_properties.subject = '类图和组件图设计及人工审查驱动的AI辅助改进'
+    doc.core_properties.subject = '类图 组件图 订单与售后状态图及AI辅助改进'
     doc.save(OUTPUT)
     print(str(OUTPUT))
 

@@ -1,0 +1,40 @@
+@startuml
+' After-sale request state diagram AI draft v0.1, 2026-11-04.
+' Reference: https://plantuml.com/zh/state-diagram
+!pragma layout smetana
+title 校园二手交易系统售后申请状态图 初稿
+hide empty description
+skinparam defaultFontName Microsoft YaHei
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam stateBackgroundColor #F5F5F5
+skinparam stateBorderColor #777777
+skinparam ArrowColor #333333
+skinparam nodesep 32
+skinparam ranksep 32
+
+state "待卖方处理" as Pending
+state "待退货" as Returning
+state "待验收" as Inspecting
+state "退款处理中" as Refunding
+state "已退款" as Refunded
+state "卖方已拒绝" as SellerRejected
+state "管理员核查" as Reviewing
+state "申请被驳回" as Denied
+state RefundEnd <<end>>
+state DeniedEnd <<end>>
+
+[*] --> Pending : 有效申请
+Pending -down-> Returning : 卖方同意
+Returning -down-> Inspecting : 商品退回
+Inspecting -down-> Refunding : 验收通过
+Refunding -down-> Refunded : 退款成功确认
+Refunded --> RefundEnd
+
+Pending -right-> SellerRejected : 卖方拒绝
+SellerRejected -down-> Reviewing : 买方申请介入
+Pending --> Reviewing : 买方申请介入\n[48小时未答复]
+Reviewing -left-> Returning : 管理员同意
+Reviewing -down-> Denied : 管理员驳回
+Denied --> DeniedEnd
+@enduml

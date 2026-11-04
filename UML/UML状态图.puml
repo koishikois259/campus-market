@@ -1,5 +1,5 @@
 @startuml
-' Order state diagram simplified draft v0.2, 2026-11-03.
+' Order state diagram v0.3, revised after user review, 2026-11-04.
 ' Reference: https://plantuml.com/zh/state-diagram
 !pragma layout smetana
 title 校园二手交易系统订单主流程状态图 初稿
@@ -19,9 +19,9 @@ state "交易进行中" as Active {
   state "待交付" as Ready
   state "交付中" as Delivering
 
-  Pending -down-> WaitingPayment : 线上售卖\n确认方案
+  Pending -down-> WaitingPayment : 双方确认方案\n[售卖且线上付款]
   WaitingPayment -down-> Ready : 付款成功
-  Pending --> Ready : 线下或赠送\n确认方案
+  Pending --> Ready : 双方确认方案\n[售卖且线下付款\n或赠送]
   Ready -down-> Delivering : 代交人取件
 }
 
@@ -39,7 +39,9 @@ Completed --> CompletedEnd
 Cancelled --> CancelledEnd
 
 legend bottom
-  确认方案：卖家接受，且双方确认同一方案。
+  类型：发布时确定售卖或赠送，订单快照保留。
+  方案：卖家接受后双方确认；售卖确认付款与交付方式，
+  赠送仅确认交付方式；线下付款只允许见面。
   完成：付费已付款且已收货；赠送已收货；代交还须交件。
   取消：卖家拒绝、24小时未接受、线上30分钟未付；
   普通未付售卖须双方同意，赠送取件前可取消；
