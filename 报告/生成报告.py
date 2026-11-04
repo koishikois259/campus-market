@@ -194,7 +194,7 @@ def main():
                 font(p.add_run(line))
     doc.core_properties.author = '贾一帆'
     doc.core_properties.title = '校园二手交易系统实验二报告'
-    doc.core_properties.subject = '类图 组件图 订单与售后状态图及AI辅助改进'
+    doc.core_properties.subject = '类图 组件图 状态图 时序图及AI辅助改进'
     doc.save(OUTPUT)
     print(str(OUTPUT))
 
