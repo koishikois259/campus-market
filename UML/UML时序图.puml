@@ -1,5 +1,5 @@
 @startuml
-' Sequence diagram AI draft v0.1, 2026-11-03.
+' Sequence diagram v0.2, concise legend after user review, 2026-11-04.
 ' Reference: https://plantuml.com/zh/sequence-diagram
 title 线上付款与见面交付时序图 初稿
 autonumber
@@ -55,8 +55,7 @@ Channel --> App : 结算成功
 App -> DB : 记录结算成功
 
 legend bottom
-  本图展开一次有效线上见面交易，省略界面层和模块内部调用。
-  权限、商品版本及库存以服务端为准；重复预约返回原记录。
-  预约失败整体回滚；迟到付款、退款和代交分支另行展开。
+  仅示线上付款、见面交付的正常流程。
+  预约失败回滚；重复请求不重复占用或记账。
 endlegend
 @enduml
