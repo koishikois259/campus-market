@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>校园二手交易系统 · UI 初稿预览</title>
+<style>
+  :root { color-scheme: light; font-family: "Microsoft YaHei", system-ui, sans-serif; color: #253e32; background: #eef1ee; }
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  button, select { font: inherit; }
+  button, select, a { -webkit-tap-highlight-color: transparent; }
+  button, select { border: 1px solid #d7e0d8; border-radius: 7px; color: #344d42; background: white; padding: 8px 12px; cursor: pointer; }
+  button:hover, a:hover { color: #187559; }
+  button:disabled { cursor: default; opacity: .4; }
+  :focus-visible { outline: 3px solid #67ac89; outline-offset: 2px; }
+  header { height: 68px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid #dfe6df; background: white; }
+  h1 { font-size: 18px; margin: 0; }
+  .badge { font-size: 12px; color: #187559; background: #eaf4ee; padding: 5px 9px; border-radius: 6px; white-space: nowrap; }
+  .layout { display: grid; grid-template-columns: 246px minmax(0,1fr); height: calc(100dvh - 68px); }
+  aside { background: white; padding: 20px 12px; overflow: auto; border-right: 1px solid #dfe6df; }
+  .nav-caption { color: #718078; font-size: 12px; padding: 0 12px; margin: 0 0 12px; }
+  #pages { display: grid; gap: 6px; }
+  .page { display: flex; gap: 10px; align-items: baseline; width: 100%; text-align: left; border-color: transparent; padding: 12px; line-height: 1.6; }
+  .page .num { font-size: 12px; color: #718078; font-variant-numeric: tabular-nums; }
+  .page.active { color: #156649; background: #eaf4ee; font-weight: 600; }
+  aside p:last-child { font-size: 12px; color: #718078; padding: 18px 12px; line-height: 1.9; }
+  main { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+  .toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 12px 20px; background: #f9fbf8; border-bottom: 1px solid #dfe6df; }
+  #count { min-width: 54px; text-align: center; color: #64756a; font-size: 13px; font-variant-numeric: tabular-nums; }
+  .spacer { flex: 1; }
+  .toolbar a { text-decoration: none; color: #187559; font-size: 13px; padding: 8px; }
+  .info { padding: 14px 24px; background: #f9fbf8; border-bottom: 1px solid #dfe6df; }
+  h2 { font-size: 16px; margin: 0 0 6px; }
+  #note { font-size: 13px; color: #64756a; line-height: 1.8; margin: 0; }
+  #viewport { flex: 1; min-height: 0; overflow: auto; padding: 24px; }
+  #artboard { display: block; max-width: none; margin: 0 auto; border: 1px solid #dfe6df; box-shadow: 0 6px 24px #253e3210; background: white; }
+  #error { display: none; background: white; padding: 24px; line-height: 1.8; border-radius: 8px; color: #a0473e; }
+  #mobile-pages { display: none; max-width: 220px; }
+  footer { padding: 9px 20px; font-size: 12px; line-height: 1.7; color: #64756a; background: #f9fbf8; border-top: 1px solid #dfe6df; }
+  @media (max-width: 850px) { .layout { grid-template-columns: 1fr; } aside { display: none; } #mobile-pages { display: block; } .spacer { display: none; } header { padding: 0 16px; } h1 { font-size: 15px; } .toolbar { padding: 10px 12px; } #viewport { padding: 12px; } .info { padding: 12px 16px; } }
+</style>
+</head>
+<body>
+<header><h1>校园二手交易系统 · UI 初稿预览</h1><span class="badge">v0.1 · 待审查</span></header>
+<div class="layout">
+  <aside aria-label="画板目录"><p class="nav-caption">首轮画板 · 10 张</p><nav id="pages"></nav><p>点击目录切换画板。<br>← / → 切换上一张、下一张。<br>双击画板切换适应宽度与 100%。</p></aside>
+  <main>
+    <div class="toolbar" aria-label="预览工具">
+      <select id="mobile-pages" aria-label="选择画板"></select>
+      <button id="previous" type="button">上一张</button><span id="count" aria-live="polite"></span><button id="next" type="button">下一张</button>
+      <span class="spacer"></span>
+      <label for="zoom">缩放</label>
+      <select id="zoom"><option value="fit">适应宽度</option><option value="0.5">50%</option><option value="0.75">75%</option><option value="1">100%</option><option value="1.5">150%</option><option value="2">200%</option></select>
+      <a id="open-png" target="_blank" rel="noopener">打开原图 ↗</a><a id="open-svg" target="_blank" rel="noopener">打开 SVG ↗</a>
+    </div>
+    <div class="info"><h2 id="title"></h2><p id="note"></p></div>
+    <div id="viewport" tabindex="0" aria-label="画板查看区"><p id="error" role="alert">图片未加载。请保留本文件与同目录中的 PNG 文件，并用浏览器打开本文件。</p><img id="artboard" alt="" draggable="false"></div>
+    <footer>静态设计画板：图内业务按钮用于展示设计；请通过左侧目录切换页面。无需登录或联网。</footer>
+  </main>
+</div>
+<script>
+  const pages = [
+    ['UI-02_商品浏览', '商品浏览与组合查询', '先看配色、商品卡片和筛选区的信息密度。', 1440, 1000],
+    ['UI-03_商品详情与预约', '商品详情与数量预约', '核对图片与操作区的比例，以及价格、可用数量、售后声明和预约按钮是否清楚。', 1440, 1050],
+    ['UI-06_发布商品', '发布与编辑商品', '查看必填信息、售卖/赠送、售后声明，以及保存草稿和提交审核的区分。', 1440, 1120],
+    ['UI-04_个人工作台', '个人工作台与预约订单列表', '同一账号共用买卖入口；当前是林同学查看本人卖出订单的示例。', 1440, 1000],
+    ['UI-08a_订单详情_待卖家接受', '订单详情：卖家接受预约', '卖家尚未接受，显示接受/拒绝入口和自预约成功起 24 小时的截止时刻。', 1440, 1100],
+    ['UI-08b_订单详情_确认方案', '订单详情：买家确认方案', '卖家已接受并确认线上见面方案；订单仍为待确认，等待买家确认。', 1440, 1100],
+    ['UI-08c_订单详情_方案修改', '订单详情：方案修改后重新确认', '改为线下见面后，双方旧确认重置；原来的确认和变更历史继续保留。', 1440, 1100],
+    ['UI-03v_预约反馈变体', '预约反馈的局部画板', '四个独立结果：提交中、预约成功、库存变化，以及后端已明确确认的失败。', 1440, 1000],
+    ['UI-05v_商品管理与发布变体', '商品管理与表单的局部变体', '展示驳回重提、有效预约时禁止编辑/下架、售后未声明，以及赠送零金额。', 1440, 1070],
+    ['UI-08v_取消协商变体', '取消申请与对方处理的局部画板', '申请后须对方同意；等待答复期间不取消订单、不释放占用，也不暂停原倒计时。', 1440, 1000]
+  ];
+  const $ = id => document.getElementById(id);
+  let index = 0;
+  try { const requested = decodeURIComponent(location.hash.slice(1)); const found = pages.findIndex(p => p[0] === requested); if (found >= 0) index = found; } catch (_) {}
+  for (const [i, page] of pages.entries()) {
+    const button = document.createElement('button'); button.type = 'button'; button.className = 'page';
+    const number = document.createElement('span'); number.className = 'num'; number.textContent = String(i + 1).padStart(2, '0');
+    const label = document.createElement('span'); label.textContent = page[1]; button.append(number, label);
+    button.addEventListener('click', () => show(i)); $('pages').append(button);
+    const option = document.createElement('option'); option.value = i; option.textContent = `${i + 1}. ${page[1]}`; $('mobile-pages').append(option);
+  }
+  function resize() {
+    const padding = innerWidth <= 850 ? 24 : 48;
+    const scale = $('zoom').value === 'fit' ? Math.max(0.1, ($('viewport').clientWidth - padding) / pages[index][3]) : Number($('zoom').value);
+    $('artboard').style.width = `${pages[index][3] * scale}px`;
+  }
+  function show(nextIndex) {
+    index = Math.max(0, Math.min(pages.length - 1, nextIndex));
+    const page = pages[index];
+    $('title').textContent = page[1]; $('note').textContent = page[2]; $('count').textContent = `${index + 1} / ${pages.length}`;
+    $('previous').disabled = index === 0; $('next').disabled = index === pages.length - 1; $('mobile-pages').value = index;
+    [...$('pages').children].forEach((button, i) => { button.classList.toggle('active', i === index); if (i === index) button.setAttribute('aria-current', 'page'); else button.removeAttribute('aria-current'); });
+    const filename = `${page[0]}.png`;
+    $('error').style.display = 'none'; $('artboard').style.display = 'block'; $('artboard').alt = page[1]; $('artboard').src = filename;
+    $('open-png').href = filename; $('open-svg').href = `../../UI设计源文件/初稿_v0.1/${page[0]}.svg`;
+    $('viewport').scrollTop = 0; $('viewport').scrollLeft = 0; resize();
+    history.replaceState(null, '', '#' + encodeURIComponent(page[0]));
+  }
+  $('previous').addEventListener('click', () => show(index - 1)); $('next').addEventListener('click', () => show(index + 1));
+  $('mobile-pages').addEventListener('change', event => show(Number(event.target.value)));
+  $('zoom').addEventListener('change', resize); addEventListener('resize', resize);
+  $('artboard').addEventListener('dblclick', () => { $('zoom').value = $('zoom').value === 'fit' ? '1' : 'fit'; resize(); });
+  $('artboard').addEventListener('error', () => { $('error').style.display = 'block'; $('artboard').style.display = 'none'; });
+  addEventListener('keydown', event => { if (event.target.matches('select, input, textarea')) return; if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); show(index + (event.key === 'ArrowRight' ? 1 : -1)); } });
+  show(index);
+</script>
+</body>
+</html>
