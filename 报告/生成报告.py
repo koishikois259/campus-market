@@ -1,7 +1,7 @@
-"""Build the class-design report from the Markdown source and current UML PNG.
+"""Build the UML-design report from Markdown and current diagram PNGs.
 
 Run with the Codex bundled Python runtime (python-docx and Pillow required).
-All pages use A4 portrait; the diagram is proportionally fitted to its own page.
+All pages use A4 portrait; figures retain their original aspect ratios.
 """
 from pathlib import Path
 import re
@@ -80,6 +80,15 @@ def table(doc, rows):
     return result
 
 
+def new_section(doc, figure=False):
+    section = doc.add_section(WD_SECTION_START.NEW_PAGE)
+    section.orientation = WD_ORIENT.PORTRAIT
+    section.page_width, section.page_height = Cm(21), Cm(29.7)
+    section.top_margin = section.bottom_margin = Cm(1.2 if figure else 1.6)
+    section.left_margin = section.right_margin = Cm(1.2 if figure else 2)
+    return section
+
+
 def main():
     doc = Document()
     # The bundled Word base can carry a blue bottom border on Title/Normal.
@@ -108,18 +117,25 @@ def main():
     doc.styles['Normal'].paragraph_format.space_after = Pt(4)
     footer = section.footer.paragraphs[0]
     footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    font(footer.add_run('软件工程实验二  类图设计阶段稿    '), 9)
+    font(footer.add_run('软件工程实验二  UML设计阶段稿    '), 9)
     field = OxmlElement('w:fldSimple')
     field.set(qn('w:instr'), 'PAGE')
     footer._p.append(field)
     lines = SOURCE.read_text(encoding='utf-8').splitlines()
     i = 0
+    figure_page = False
     while i < len(lines):
         line = lines[i].strip()
         i += 1
         if not line:
             continue
-        if line.startswith('# '):
+        if line == '<!-- figure-page -->':
+            figure_page = True
+            continue
+        elif line == '<!-- page-break -->':
+            section = new_section(doc)
+            continue
+        elif line.startswith('# '):
             p = doc.add_paragraph(style='Title')
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             p.paragraph_format.space_after = Pt(5)
@@ -142,20 +158,20 @@ def main():
             assert match
             caption, relative_path = match.groups()
             figure = (ROOT / relative_path).resolve()
-            foldout = doc.add_section(WD_SECTION_START.NEW_PAGE)
-            foldout.orientation = WD_ORIENT.PORTRAIT
-            foldout.page_width, foldout.page_height = Cm(21), Cm(29.7)
-            foldout.top_margin, foldout.bottom_margin = Cm(1.2), Cm(1.2)
-            foldout.left_margin, foldout.right_margin = Cm(1.2), Cm(1.2)
+            if figure_page:
+                section = new_section(doc, figure=True)
+                figure_page = False
             p = doc.add_paragraph()
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             p.paragraph_format.space_after = Pt(2)
             p.paragraph_format.line_spacing = 1
+            p.paragraph_format.keep_with_next = True
             with Image.open(figure) as image:
                 w, h = image.size
-            image_width = min(18.6, 25.6 * w / h)
+            available_width = (section.page_width - section.left_margin - section.right_margin) / Cm(1)
+            image_width = min(available_width, 25.6 * w / h)
             picture = p.add_run().add_picture(str(figure), width=Cm(image_width))
-            picture._inline.docPr.set('descr', '校园二手交易系统类图，含平台、用户、交易、支付、代交、售后及举报关系')
+            picture._inline.docPr.set('descr', caption)
             p = doc.add_paragraph()
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             p.paragraph_format.space_after = Pt(0)
@@ -172,7 +188,7 @@ def main():
                 font(p.add_run(line))
     doc.core_properties.author = '贾一帆'
     doc.core_properties.title = '校园二手交易系统实验二报告'
-    doc.core_properties.subject = '类图设计及人工审查驱动的AI辅助改进'
+    doc.core_properties.subject = '类图和组件图设计及人工审查驱动的AI辅助改进'
     doc.save(OUTPUT)
     print(str(OUTPUT))
 
