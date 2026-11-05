@@ -4,6 +4,7 @@ Run with the Codex bundled Python runtime (python-docx and Pillow required).
 All pages use A4 portrait; figures retain their original aspect ratios.
 """
 from pathlib import Path
+import argparse
 import re
 
 from docx import Document
@@ -110,7 +111,7 @@ def normalize_text_colors(doc):
             black(run.get_or_add_rPr())
 
 
-def main():
+def main(output=OUTPUT):
     doc = Document()
     # The bundled Word base can carry a blue bottom border on Title/Normal.
     # Remove inherited paragraph rules as well as direct paragraph borders.
@@ -146,6 +147,7 @@ def main():
     i = 0
     figure_page = False
     figure_width = None
+    ui_mode = False
     while i < len(lines):
         line = lines[i].strip()
         i += 1
@@ -160,9 +162,11 @@ def main():
             continue
         elif line == '<!-- page-break -->':
             section = new_section(doc)
+            ui_mode = False
             continue
-        elif line == '<!-- ui-page -->':
+        elif line == '<!-- ui-start -->':
             section = new_section(doc, figure=True)
+            ui_mode = True
             continue
         elif line.startswith('# '):
             p = doc.add_paragraph(style='Title')
@@ -171,6 +175,10 @@ def main():
             font(p.add_run(line[2:]), 18, True, '黑体')
         elif line.startswith('### '):
             p = doc.add_paragraph(line[4:], style='Heading 2')
+            if ui_mode:
+                p.paragraph_format.space_before = Pt(5)
+                p.paragraph_format.space_after = Pt(2)
+                p.paragraph_format.line_spacing = Pt(14)
         elif line.startswith('## '):
             p = doc.add_paragraph(line[3:], style='Heading 1')
         elif line.startswith('|'):
@@ -199,13 +207,20 @@ def main():
                 w, h = image.size
             available_width = (section.page_width - section.left_margin - section.right_margin) / Cm(1)
             image_width = min(available_width, figure_width or available_width, 25.6 * w / h)
+            if ui_mode:
+                # Stack related UI blocks in the normal text flow, with room for
+                # their headings, descriptions and captions on A4 portrait.
+                image_width = min(image_width, 15.5, 10.6 * w / h)
             figure_width = None
             picture = p.add_run().add_picture(str(figure), width=Cm(image_width))
             picture._inline.docPr.set('descr', caption)
             p = doc.add_paragraph()
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             p.paragraph_format.space_after = Pt(0)
-            font(p.add_run(caption), 10.5)
+            if ui_mode:
+                p.paragraph_format.line_spacing = Pt(12)
+                p.paragraph_format.space_after = Pt(4)
+            font(p.add_run(caption), 9.5 if ui_mode else 10.5)
         else:
             p = doc.add_paragraph()
             if line.startswith('学号 ') or line.startswith('阶段稿'):
@@ -215,14 +230,23 @@ def main():
             else:
                 p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
                 p.paragraph_format.first_line_indent = Pt(21)
+                if ui_mode:
+                    p.paragraph_format.line_spacing = Pt(14)
+                    p.paragraph_format.space_after = Pt(3)
+                    # Keep the introduction with its picture, and the picture
+                    # with its caption; do not strand text at the page bottom.
+                    p.paragraph_format.keep_with_next = True
                 font(p.add_run(line))
     doc.core_properties.author = '贾一帆'
     doc.core_properties.title = '校园二手交易系统实验二报告'
     doc.core_properties.subject = '四种UML图 八模块UI及AI辅助改进'
     normalize_text_colors(doc)
-    doc.save(OUTPUT)
-    print(str(OUTPUT))
+    output.parent.mkdir(parents=True, exist_ok=True)
+    doc.save(output)
+    print(str(output))
 
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--output', type=Path, default=OUTPUT)
+    main(parser.parse_args().output)
