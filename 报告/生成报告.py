@@ -200,6 +200,7 @@ def main(output=OUTPUT):
     figure_page = False
     figure_width = None
     ui_mode = False
+    ai_mode = False
     list_number_id = None
     while i < len(lines):
         line = lines[i].strip()
@@ -236,8 +237,14 @@ def main(output=OUTPUT):
                 p.paragraph_format.space_before = Pt(5)
                 p.paragraph_format.space_after = Pt(2)
                 p.paragraph_format.line_spacing = Pt(14)
+            elif ai_mode:
+                p.paragraph_format.space_before = Pt(8)
+                p.paragraph_format.space_after = Pt(3)
+                p.paragraph_format.line_spacing = Pt(17)
+                p.paragraph_format.keep_with_next = True
         elif line.startswith('## '):
             p = doc.add_paragraph(line[3:], style='Heading 1')
+            ai_mode = line.startswith('## 七 ')
         elif line.startswith('|'):
             rows = []
             i -= 1
@@ -312,7 +319,21 @@ def main(output=OUTPUT):
                     # Keep the introduction with its picture, and the picture
                     # with its caption; do not strand text at the page bottom.
                     p.paragraph_format.keep_with_next = True
-                font(p.add_run(line))
+                if ai_mode:
+                    p.paragraph_format.first_line_indent = Pt(0)
+                    p.paragraph_format.line_spacing = Pt(17)
+                    p.paragraph_format.space_after = Pt(3)
+                    p.paragraph_format.keep_together = True
+                    p.paragraph_format.keep_with_next = line.startswith(
+                        ('**使用场景**', '**生成结果**', '**优缺点分析**'))
+                    lead = re.fullmatch(r'\*\*(.+?)\*\*(.*)', line)
+                    if lead:
+                        font(p.add_run(lead[1]), bold=True)
+                        font(p.add_run(lead[2]))
+                    else:
+                        font(p.add_run(line))
+                else:
+                    font(p.add_run(line))
     doc.core_properties.author = '贾一帆'
     doc.core_properties.title = '校园二手交易系统实验二报告'
     doc.core_properties.subject = '四种UML图 八模块UI及AI辅助改进'
