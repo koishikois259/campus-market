@@ -142,6 +142,27 @@ def normalize_heading_fonts(doc):
                 songti(run.get_or_add_rPr())
 
 
+def start_numbered_list(doc):
+    numbering = doc.part.numbering_part.element
+    style_id = doc.styles['List Number'].element.xpath('./w:pPr/w:numPr/w:numId')[0].get(qn('w:val'))
+    definition = next(n for n in numbering.xpath('./w:num') if n.get(qn('w:numId')) == style_id)
+    abstract_id = definition.find(qn('w:abstractNumId')).get(qn('w:val'))
+    number_id = max(int(n.get(qn('w:numId'))) for n in numbering.xpath('./w:num')) + 1
+    number = OxmlElement('w:num')
+    number.set(qn('w:numId'), str(number_id))
+    abstract = OxmlElement('w:abstractNumId')
+    abstract.set(qn('w:val'), abstract_id)
+    number.append(abstract)
+    override = OxmlElement('w:lvlOverride')
+    override.set(qn('w:ilvl'), '0')
+    start = OxmlElement('w:startOverride')
+    start.set(qn('w:val'), '1')
+    override.append(start)
+    number.append(override)
+    numbering.append(number)
+    return number_id
+
+
 def main(output=OUTPUT):
     doc = Document()
     # The bundled Word base can carry a blue bottom border on Title/Normal.
@@ -179,6 +200,7 @@ def main(output=OUTPUT):
     figure_page = False
     figure_width = None
     ui_mode = False
+    list_number_id = None
     while i < len(lines):
         line = lines[i].strip()
         i += 1
@@ -193,6 +215,10 @@ def main(output=OUTPUT):
             continue
         elif line == '<!-- page-break -->':
             section = new_section(doc)
+            ui_mode = False
+            continue
+        elif line == '<!-- figure-section -->':
+            section = new_section(doc, figure=True)
             ui_mode = False
             continue
         elif line == '<!-- ui-start -->':
@@ -253,8 +279,13 @@ def main(output=OUTPUT):
                 p.paragraph_format.space_after = Pt(4)
             font(p.add_run(caption), 9.5 if ui_mode else 10.5)
         elif re.match(r'^\d+\.\s+', line):
+            if line.startswith('1. ') or list_number_id is None:
+                list_number_id = start_numbered_list(doc)
             text = re.sub(r'^\d+\.\s+', '', line)
             p = doc.add_paragraph(style='List Number')
+            numbers = p._p.get_or_add_pPr().get_or_add_numPr()
+            numbers.get_or_add_ilvl().val = 0
+            numbers.get_or_add_numId().val = list_number_id
             p.paragraph_format.left_indent = Cm(.65)
             p.paragraph_format.first_line_indent = Cm(-.5)
             p.paragraph_format.line_spacing = Pt(14)
