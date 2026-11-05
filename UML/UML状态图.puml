@@ -2,7 +2,7 @@
 ' Order state diagram v0.3, revised after user review, 2026-11-04.
 ' Reference: https://plantuml.com/zh/state-diagram
 !pragma layout smetana
-title 校园二手交易系统订单主流程状态图 初稿
+title 校园二手交易系统订单主流程状态图
 hide empty description
 skinparam defaultFontName Microsoft YaHei
 skinparam defaultFontSize 14

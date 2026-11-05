@@ -1,7 +1,7 @@
 @startuml
 ' Sequence diagram v0.4, restored three-stage flow after user review, 2026-11-04.
 ' Reference: https://plantuml.com/zh/sequence-diagram
-title 线上付款与见面交付时序图 初稿
+title 线上付款与见面交付时序图
 autonumber
 hide footbox
 skinparam defaultFontName Microsoft YaHei
