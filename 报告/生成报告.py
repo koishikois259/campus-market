@@ -111,6 +111,37 @@ def normalize_text_colors(doc):
             black(run.get_or_add_rPr())
 
 
+def normalize_heading_fonts(doc):
+    """Use explicit Songti for heading styles, linked styles and their runs."""
+    def songti(properties):
+        fonts = properties.find(qn('w:rFonts'))
+        if fonts is None:
+            fonts = OxmlElement('w:rFonts')
+            properties.insert(0, fonts)
+        fonts.attrib.clear()
+        for script in ('ascii', 'hAnsi', 'eastAsia', 'cs'):
+            fonts.set(qn('w:' + script), '宋体')
+
+    styles = {s.style_id: s for s in doc.styles}
+    heading_ids = {s.style_id for s in doc.styles
+                   if s.name in ('Title', 'Subtitle', 'TOC Heading')
+                   or s.name.lower().startswith('heading ')}
+    for style_id in list(heading_ids):
+        for link in styles[style_id].element.xpath('./w:link'):
+            heading_ids.add(link.get(qn('w:val')))
+    for style_id in heading_ids:
+        if style_id in styles:
+            songti(styles[style_id].element.get_or_add_rPr())
+    for p in doc.element.xpath('.//w:p'):
+        paragraph = p.find(qn('w:pPr'))
+        style = paragraph.find(qn('w:pStyle')) if paragraph is not None else None
+        if style is not None and style.get(qn('w:val')) in heading_ids:
+            for properties in p.xpath('./w:pPr/w:rPr'):
+                songti(properties)
+            for run in p.xpath('.//w:r'):
+                songti(run.get_or_add_rPr())
+
+
 def main(output=OUTPUT):
     doc = Document()
     # The bundled Word base can carry a blue bottom border on Title/Normal.
@@ -129,7 +160,7 @@ def main(output=OUTPUT):
         style.font.name = 'Times New Roman'
         style.font.size = Pt(size)
         style.font.color.rgb = RGBColor(0, 0, 0)
-        style.element.get_or_add_rPr().rFonts.set(qn('w:eastAsia'), '宋体' if name == 'Normal' else '黑体')
+        style.element.get_or_add_rPr().rFonts.set(qn('w:eastAsia'), '宋体')
         if name.startswith('Heading'):
             style.font.bold = True
             style.paragraph_format.space_before = Pt(7)
@@ -172,7 +203,7 @@ def main(output=OUTPUT):
             p = doc.add_paragraph(style='Title')
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             p.paragraph_format.space_after = Pt(5)
-            font(p.add_run(line[2:]), 18, True, '黑体')
+            font(p.add_run(line[2:]), 18, True, '宋体')
         elif line.startswith('### '):
             p = doc.add_paragraph(line[4:], style='Heading 2')
             if ui_mode:
@@ -254,6 +285,7 @@ def main(output=OUTPUT):
     doc.core_properties.author = '贾一帆'
     doc.core_properties.title = '校园二手交易系统实验二报告'
     doc.core_properties.subject = '四种UML图 八模块UI及AI辅助改进'
+    normalize_heading_fonts(doc)
     normalize_text_colors(doc)
     output.parent.mkdir(parents=True, exist_ok=True)
     doc.save(output)
