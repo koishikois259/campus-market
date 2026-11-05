@@ -221,6 +221,20 @@ def main(output=OUTPUT):
                 p.paragraph_format.line_spacing = Pt(12)
                 p.paragraph_format.space_after = Pt(4)
             font(p.add_run(caption), 9.5 if ui_mode else 10.5)
+        elif re.match(r'^\d+\.\s+', line):
+            text = re.sub(r'^\d+\.\s+', '', line)
+            p = doc.add_paragraph(style='List Number')
+            p.paragraph_format.left_indent = Cm(.65)
+            p.paragraph_format.first_line_indent = Cm(-.5)
+            p.paragraph_format.line_spacing = Pt(14)
+            p.paragraph_format.space_after = Pt(2)
+            p.paragraph_format.keep_together = True
+            lead = re.fullmatch(r'\*\*(.+?)\*\*(.*)', text)
+            if lead:
+                font(p.add_run(lead[1]), bold=True)
+                font(p.add_run(lead[2]))
+            else:
+                font(p.add_run(text))
         else:
             p = doc.add_paragraph()
             if line.startswith('学号 ') or line.startswith('阶段稿'):
