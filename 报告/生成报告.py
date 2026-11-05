@@ -10,6 +10,7 @@ from docx import Document
 from docx.enum.section import WD_SECTION_START, WD_ORIENT
 from docx.enum.table import WD_TABLE_ALIGNMENT, WD_CELL_VERTICAL_ALIGNMENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.enum.style import WD_STYLE_TYPE
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Cm, Pt, RGBColor
@@ -87,6 +88,26 @@ def new_section(doc, figure=False):
     section.top_margin = section.bottom_margin = Cm(1.2 if figure else 1.6)
     section.left_margin = section.right_margin = Cm(1.2 if figure else 2)
     return section
+
+
+def normalize_text_colors(doc):
+    """Use explicit black for text, including linked heading/strong styles."""
+    def black(properties):
+        color = properties.get_or_add_color()
+        # Remove themeColor/themeTint/themeShade as well as cached RGB values.
+        color.attrib.clear()
+        color.set(qn('w:val'), '000000')
+
+    for style in doc.styles:
+        if style.type in (WD_STYLE_TYPE.PARAGRAPH, WD_STYLE_TYPE.CHARACTER):
+            black(style.element.get_or_add_rPr())
+    for properties in doc.styles.element.xpath('./w:docDefaults/w:rPrDefault/w:rPr'):
+        black(properties)
+    parts = [doc.part] + [part for part in doc.part.related_parts.values()
+                         if part.content_type.endswith(('header+xml', 'footer+xml'))]
+    for part in parts:
+        for run in part.element.xpath('.//w:r'):
+            black(run.get_or_add_rPr())
 
 
 def main():
@@ -198,6 +219,7 @@ def main():
     doc.core_properties.author = '贾一帆'
     doc.core_properties.title = '校园二手交易系统实验二报告'
     doc.core_properties.subject = '四种UML图 八模块UI及AI辅助改进'
+    normalize_text_colors(doc)
     doc.save(OUTPUT)
     print(str(OUTPUT))
 
