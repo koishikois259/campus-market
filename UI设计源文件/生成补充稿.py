@@ -585,7 +585,7 @@ def main():
     (OUT/'画板清单.json').write_text(json.dumps(dict(version='0.3',status='补充模块 AI 初稿，待用户审查；报告暂停',pages=PAGES),ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
     # Reuse the offline viewer; its routes are demonstrations, not live transactions.
     ui.preview()
-    path=ROOT/'UI界面'/VERSION/'预览.html'
+    path=ROOT/'UI过程稿'/VERSION/'预览.html'
     html=path.read_text(encoding='utf-8')
     html=html.replace('UI 修订稿预览','UI 补充稿预览').replace('v0.2 · 本轮已确认','v0.3 · 补充初稿待审查')
     html=html.replace(f'修订画板 · {len(PAGES)} 张',f'补充画板 · {len(PAGES)} 张')

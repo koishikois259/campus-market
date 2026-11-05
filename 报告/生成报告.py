@@ -1,4 +1,4 @@
-"""Build the UML-design report from Markdown and current diagram PNGs.
+"""Build the UML and UI report from Markdown and selected PNGs.
 
 Run with the Codex bundled Python runtime (python-docx and Pillow required).
 All pages use A4 portrait; figures retain their original aspect ratios.
@@ -117,7 +117,7 @@ def main():
     doc.styles['Normal'].paragraph_format.space_after = Pt(4)
     footer = section.footer.paragraphs[0]
     footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    font(footer.add_run('软件工程实验二  UML设计阶段稿    '), 9)
+    font(footer.add_run('软件工程实验二  UML与UI设计    '), 9)
     field = OxmlElement('w:fldSimple')
     field.set(qn('w:instr'), 'PAGE')
     footer._p.append(field)
@@ -139,6 +139,9 @@ def main():
             continue
         elif line == '<!-- page-break -->':
             section = new_section(doc)
+            continue
+        elif line == '<!-- ui-page -->':
+            section = new_section(doc, figure=True)
             continue
         elif line.startswith('# '):
             p = doc.add_paragraph(style='Title')
@@ -194,7 +197,7 @@ def main():
                 font(p.add_run(line))
     doc.core_properties.author = '贾一帆'
     doc.core_properties.title = '校园二手交易系统实验二报告'
-    doc.core_properties.subject = '类图 组件图 状态图 时序图及AI辅助改进'
+    doc.core_properties.subject = '四种UML图 八模块UI及AI辅助改进'
     doc.save(OUTPUT)
     print(str(OUTPUT))
 

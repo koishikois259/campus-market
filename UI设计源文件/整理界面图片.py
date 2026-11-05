@@ -14,7 +14,7 @@ for version in VERSIONS:
         pages.append(dict(page, version=version,
                           review='本轮已认可' if version == '修订_v0.2' else '待用户审查'))
 assert len({page['id'] for page in pages}) == len(pages), 'Duplicate artboard IDs'
-target_dir = ROOT / 'UI界面'
+target_dir = ROOT / 'UI过程稿' / '原编号_v0.3'
 rows = []
 
 # Validate every source before writing numbered files.

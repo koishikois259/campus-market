@@ -1,0 +1,15 @@
+{
+  "status": "用户认可界面，报告精选十张",
+  "pages": [
+    {"number": 1, "name": "学校邮箱登录", "version": "补充_v0.3", "id": "UI-01_学校邮箱登录", "modules": ["用户"]},
+    {"number": 2, "name": "商品浏览", "version": "修订_v0.2", "id": "UI-02_商品浏览", "modules": ["商品"]},
+    {"number": 3, "name": "发布商品", "version": "修订_v0.2", "id": "UI-06_发布商品", "modules": ["商品"]},
+    {"number": 4, "name": "商品详情与预约", "version": "修订_v0.2", "id": "UI-03_商品详情与预约", "modules": ["预约"]},
+    {"number": 5, "name": "个人工作台", "version": "修订_v0.2", "id": "UI-04_个人工作台", "modules": ["用户", "订单"]},
+    {"number": 6, "name": "订单方案确认", "version": "修订_v0.2", "id": "UI-08b_订单详情_确认方案", "modules": ["预约", "订单"]},
+    {"number": 7, "name": "模拟线上付款", "version": "补充_v0.3", "id": "UI-09_模拟线上付款", "modules": ["支付"]},
+    {"number": 8, "name": "代交任务详情", "version": "补充_v0.3", "id": "UI-10a_代交任务详情", "modules": ["代交"]},
+    {"number": 9, "name": "申请部分退货", "version": "补充_v0.3", "id": "UI-11_申请部分退货", "modules": ["售后"]},
+    {"number": 10, "name": "商品审核", "version": "补充_v0.3", "id": "UI-12_商品审核", "modules": ["平台管理"]}
+  ]
+}

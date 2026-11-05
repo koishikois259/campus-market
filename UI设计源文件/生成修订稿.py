@@ -68,7 +68,7 @@ class Page(base.Page):
         (OUT/(self.key+'.svg')).write_text(svg, encoding='utf-8', newline='\n')
         PAGES.append(dict(id=self.key, title=self.title, width=1440, height=self.height, note=self.note,
                           svg=f'UI设计源文件/{VERSION}/{self.key}.svg',
-                          png=f'UI界面/{VERSION}/{self.key}.png', hotspots=self.links))
+                          png=f'UI过程稿/{VERSION}/{self.key}.png', hotspots=self.links))
 
 
 WORK = 'UI-04_个人工作台'
@@ -372,9 +372,9 @@ def cancel_states():
 
 
 def preview():
-    target_dir=ROOT/'UI界面'/VERSION
+    target_dir=ROOT/'UI过程稿'/VERSION
     target_dir.mkdir(parents=True,exist_ok=True)
-    template=(ROOT/'UI界面/初稿_v0.1/预览.html').read_text(encoding='utf-8')
+    template=(ROOT/'UI过程稿/初稿_v0.1/预览.html').read_text(encoding='utf-8')
     template=template.replace('UI 初稿预览','UI 修订稿预览').replace('v0.1 · 待审查','v0.2 · 本轮已确认')
     template=template.replace('首轮画板 · 10 张',f'修订画板 · {len(PAGES)} 张')
     template=template.replace('双击画板切换适应宽度与 100%。','双击画板切换适应宽度与 100%。<br>点击画板入口可跳转列表和详情。')

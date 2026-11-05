@@ -133,7 +133,7 @@ class Page:
         path.write_text('\n'.join(self.parts)+'\n', encoding='utf-8', newline='\n')
         PAGES.append(dict(id=self.key, title=self.title, width=1440, height=self.height,
                           svg=f'UI设计源文件/初稿_v0.1/{self.key}.svg',
-                          png=f'UI界面/初稿_v0.1/{self.key}.png'))
+                          png=f'UI过程稿/初稿_v0.1/{self.key}.png'))
 
 
 def browse():
