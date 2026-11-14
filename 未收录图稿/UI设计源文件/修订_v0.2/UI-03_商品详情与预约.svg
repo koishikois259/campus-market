@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1120" viewBox="0 0 1440 1120">
+<title>商品详情与数量预约</title>
+<desc>校园二手交易系统 UI v0.2 修订稿，白底黑字。可导入的矢量素材，样例数据均为虚构。</desc>
+<rect x="0" y="0" width="1440" height="1120" rx="0" fill="#FFFFFF"/>
+<line x1="80" y1="79" x2="1360" y2="79" stroke="#E7E7E7" stroke-width="1"/>
+<text x="80" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#171717" text-anchor="start">校园集市</text>
+<text x="324" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#171717" text-anchor="start">商品广场</text>
+<line x1="324" y1="78" x2="388" y2="78" stroke="#171717" stroke-width="2"/>
+<text x="454" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">发布商品</text>
+<text x="584" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">我的交易</text>
+<text x="1220" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" fill="#737373" text-anchor="end">邮箱已验证</text>
+<text x="1360" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="end">周同学</text>
+<text x="80" y="120" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="start">商品广场  /  书籍教材  /  商品详情</text>
+<rect x="80" y="152" width="1280" height="678" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="108" y="180" width="568" height="448" rx="12" fill="#E7EEE3"/>
+<g transform="translate(148.57142857142858 221.42857142857144) scale(2.0285714285714285)">
+<rect x="54" y="19" width="147" height="160" rx="9" fill="#CCD9C8"/>
+<rect x="42" y="7" width="147" height="160" rx="9" fill="#527B60"/>
+<rect x="42" y="7" width="12" height="160" rx="5" fill="#3D604A"/>
+<rect x="65" y="32" width="100" height="3" rx="1" fill="#BCD0BB"/>
+<text x="69" y="65" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="600" fill="#FFFFFF" text-anchor="start">高等数学</text>
+<text x="70" y="90" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#DFE9DC" text-anchor="start">上册</text>
+<path d="M68 135 Q90 101 110 125 T169 111" fill="none" stroke="#D7E7CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="69" y="151" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="10" font-weight="400" fill="#D7E7CC" text-anchor="start">MATHEMATICS</text>
+</g>
+<rect x="108" y="646" width="100" height="84" rx="12" fill="#E7EEE3"/>
+<g transform="translate(115.14285714285714 655.8571428571429) scale(0.35714285714285715)">
+<rect x="54" y="19" width="147" height="160" rx="9" fill="#CCD9C8"/>
+<rect x="42" y="7" width="147" height="160" rx="9" fill="#527B60"/>
+<rect x="42" y="7" width="12" height="160" rx="5" fill="#3D604A"/>
+<rect x="65" y="32" width="100" height="3" rx="1" fill="#BCD0BB"/>
+<text x="69" y="65" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="600" fill="#FFFFFF" text-anchor="start">高等数学</text>
+<text x="70" y="90" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#DFE9DC" text-anchor="start">上册</text>
+<path d="M68 135 Q90 101 110 125 T169 111" fill="none" stroke="#D7E7CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="69" y="151" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="10" font-weight="400" fill="#D7E7CC" text-anchor="start">MATHEMATICS</text>
+</g>
+<rect x="108" y="646" width="100" height="84" rx="12" fill="none" stroke="#171717"/>
+<rect x="224" y="646" width="100" height="84" rx="12" fill="#E7EEE3"/>
+<g transform="translate(231.14285714285714 655.8571428571429) scale(0.35714285714285715)">
+<rect x="54" y="19" width="147" height="160" rx="9" fill="#CCD9C8"/>
+<rect x="42" y="7" width="147" height="160" rx="9" fill="#527B60"/>
+<rect x="42" y="7" width="12" height="160" rx="5" fill="#3D604A"/>
+<rect x="65" y="32" width="100" height="3" rx="1" fill="#BCD0BB"/>
+<text x="69" y="65" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="600" fill="#FFFFFF" text-anchor="start">高等数学</text>
+<text x="70" y="90" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#DFE9DC" text-anchor="start">上册</text>
+<path d="M68 135 Q90 101 110 125 T169 111" fill="none" stroke="#D7E7CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="69" y="151" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="10" font-weight="400" fill="#D7E7CC" text-anchor="start">MATHEMATICS</text>
+</g>
+<g transform="translate(231.14285714285714 655.8571428571429) scale(0.35714285714285715)">
+<path d="M177 145 l10 4 M176 151 l9 3 M180 157 l6 2" fill="none" stroke="#E2D6B5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="181" cy="152" r="20" fill="none" stroke="#A76825" stroke-width="2"/>
+</g>
+<text x="108" y="762" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="start">商品全貌</text>
+<text x="224" y="762" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="start">磨损细节</text>
+<rect x="724" y="182" width="66" height="28" rx="7" fill="#F5F5F5"/>
+<text x="757.0" y="201" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#171717" text-anchor="middle">已发布</text>
+<rect x="820" y="182" width="64" height="28" rx="7" fill="#F3F3F3"/>
+<text x="852.0" y="201" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">售卖</text>
+<rect x="900" y="182" width="64" height="28" rx="7" fill="#F3F3F3"/>
+<text x="932.0" y="201" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">二手</text>
+<text x="724" y="251" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#171717" text-anchor="start">高等数学教材（上册）</text>
+<text x="724" y="288" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">书籍教材 · 使用一学期，内页有少量铅笔笔记</text>
+<text x="724" y="351" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="40" font-weight="700" fill="#171717" text-anchor="start">¥ 10.00</text>
+<text x="916" y="349" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">/ 件</text>
+<text x="724" y="390" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">可用数量</text>
+<text x="820" y="390" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="600" fill="#171717" text-anchor="start">6 件</text>
+<rect x="724" y="416" width="600" height="76" rx="10" fill="#F5F5F5"/>
+<text x="744" y="445" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#171717" text-anchor="start">支持售后退款</text>
+<text x="744" y="472" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">收货后 168 小时内可申请，需退货验收后退款。</text>
+<line x1="724" y1="516" x2="1324" y2="516" stroke="#E7E7E7" stroke-width="1"/>
+<text x="724" y="552" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#303030" text-anchor="start">预约数量</text>
+<rect x="844" y="526" width="44" height="42" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="866.0" y="553.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">−</text>
+<rect x="900" y="526" width="68" height="42" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="914" y="554" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">3</text>
+<rect x="980" y="526" width="44" height="42" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="1002.0" y="553.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">+</text>
+<text x="1044" y="552" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="start">最多 6 件</text>
+<text x="724" y="602" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#303030" text-anchor="start">预约金额</text>
+<text x="1324" y="603" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700" fill="#171717" text-anchor="end">¥ 30.00</text>
+<text x="724" y="638" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">提交后等待卖家接受，再共同确认付款与交付方案。</text>
+<rect x="724" y="668" width="600" height="52" rx="9" fill="#171717"/>
+<text x="1024.0" y="700.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">提交预约</text>
+<text x="724" y="749" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="start">发布者</text>
+<text x="799" y="749" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">林同学 · 学校邮箱已验证</text>
+<text x="1324" y="790" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="end">举报商品</text>
+<rect x="80" y="854" width="1280" height="178" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="108" y="892" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="600" fill="#171717" text-anchor="start">商品描述与磨损情况</text>
+<text x="108" y="929" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#303030" text-anchor="start">新旧情况：二手，使用一学期。</text>
+<text x="108" y="960" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#303030" text-anchor="start">磨损说明：封面右下角轻微磨损（见细节图），内页有少量铅笔笔记，无缺页，装订完好。</text>
+<text x="108" y="991" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#303030" text-anchor="start">具体交付安排在预约接受后由双方确认。</text>
+<line x1="80" y1="1078" x2="1360" y2="1078" stroke="#E7E7E7" stroke-width="1"/>
+<text x="80" y="1102" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="400" fill="#737373" text-anchor="start">校园集市</text>
+</svg>

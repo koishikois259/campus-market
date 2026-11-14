@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1120" viewBox="0 0 1440 1120">
+<title>账号限制与学校邮箱域名配置</title>
+<desc>校园二手交易系统补充模块初稿，白底黑字和彩色商品图。待审查，非真实业务。</desc>
+<rect x="0" y="0" width="1440" height="1120" rx="0" fill="#FFFFFF"/>
+<line x1="80" y1="79" x2="1360" y2="79" stroke="#E7E7E7" stroke-width="1"/>
+<text x="80" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#171717" text-anchor="start">校园集市</text>
+<text x="310" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">商品审核</text>
+<text x="456" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">举报与异常</text>
+<text x="634" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#171717" text-anchor="start">权限与分配</text>
+<line x1="634" y1="78" x2="714" y2="78" stroke="#171717" stroke-width="2"/>
+<text x="812" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">统计与日志</text>
+<text x="1220" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="400" fill="#737373" text-anchor="end">管理员</text>
+<text x="1360" y="48" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="end">许老师</text>
+<text x="80" y="151" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700" fill="#171717" text-anchor="start">账号与学校邮箱设置</text>
+<text x="80" y="190" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">只有管理员可调整限制、解除或配置学校域名。</text>
+<rect x="80" y="230" width="760" height="740" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="108" y="274" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="600" fill="#171717" text-anchor="start">账号限制</text>
+<text x="108" y="329" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="600" fill="#171717" text-anchor="start">张同学 · 当前受限</text>
+<text x="108" y="385" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">限制截止时间</text>
+<rect x="108" y="401" width="704" height="44" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="122" y="429" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">2026-11-08 18:00</text>
+<text x="108" y="507" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">处置／解除原因 *</text>
+<rect x="108" y="525" width="704" height="112" rx="7" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="122" y="554" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">已核查相关举报，按平台结论调整限制。</text>
+<rect x="108" y="685" width="340" height="48" rx="9" fill="#171717"/>
+<text x="278.0" y="715.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">保存限制调整</text>
+<rect x="464" y="685" width="348" height="48" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="638.0" y="715.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">解除限制</text>
+<text x="108" y="804" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">保留操作人、原因和处理时间。</text>
+<text x="108" y="840" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">原订单持续保留，不因限制账号被删除。</text>
+<rect x="872" y="230" width="488" height="740" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="900" y="274" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="600" fill="#171717" text-anchor="start">学校邮箱域名</text>
+<text x="900" y="329" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">有效学校域名由平台统一配置。</text>
+<text x="900" y="365" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">注册时按当前配置核对。</text>
+<text x="900" y="457" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">学校邮箱域名</text>
+<rect x="900" y="473" width="432" height="44" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="914" y="501" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">输入已确认的学校邮箱域名</text>
+<text x="900" y="579" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">配置说明</text>
+<rect x="900" y="597" width="432" height="104" rx="7" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="914" y="626" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">填写本次新增或调整的原因</text>
+<rect x="900" y="749" width="432" height="48" rx="9" fill="#171717"/>
+<text x="1116.0" y="779.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">保存域名配置</text>
+<text x="900" y="873" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="start">不在普通登录页面开放此设置。</text>
+<line x1="80" y1="1078" x2="1360" y2="1078" stroke="#E7E7E7" stroke-width="1"/>
+<text x="80" y="1102" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="400" fill="#737373" text-anchor="start">校园集市</text>
+</svg>

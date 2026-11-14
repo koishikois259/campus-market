@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000">
+<title>预约反馈的局部画板</title>
+<desc>校园二手交易系统 UI v0.2 修订稿，白底黑字。可导入的矢量素材，样例数据均为虚构。</desc>
+<rect x="0" y="0" width="1440" height="1000" rx="0" fill="#FFFFFF"/>
+<text x="80" y="82" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700" fill="#171717" text-anchor="start">预约反馈</text>
+<text x="80" y="116" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">同一预约操作在不同结果下的局部界面</text>
+<rect x="80" y="156" width="620" height="324" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="108" y="180" width="66" height="28" rx="7" fill="#F3F3F3"/>
+<text x="141.0" y="199" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">提交中</text>
+<text x="108" y="255" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#171717" text-anchor="start">正在提交预约</text>
+<text x="108" y="299" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">请稍候，正在核对商品和可用数量。</text>
+<text x="108" y="330" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">请勿重复提交。</text>
+<rect x="108" y="406" width="564" height="46" rx="9" fill="#F3F3F3"/>
+<text x="390.0" y="435.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#A3A3A3" text-anchor="middle">提交中…</text>
+<rect x="740" y="156" width="620" height="324" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="768" y="180" width="80" height="28" rx="7" fill="#F5F5F5"/>
+<text x="808.0" y="199" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#171717" text-anchor="middle">预约成功</text>
+<text x="768" y="255" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#171717" text-anchor="start">已预约 3 件</text>
+<text x="768" y="299" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">高等数学教材（上册） · ¥30.00</text>
+<text x="768" y="330" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">等待卖家在 11 月 5 日 14:00 前接受。</text>
+<text x="768" y="375" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="start">订单 O20261104001</text>
+<rect x="768" y="406" width="564" height="46" rx="9" fill="#171717"/>
+<text x="1050.0" y="435.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">查看订单</text>
+<rect x="80" y="512" width="620" height="324" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="108" y="536" width="80" height="28" rx="7" fill="#F7F7F7"/>
+<text x="148.0" y="555" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#515151" text-anchor="middle">库存变化</text>
+<text x="108" y="611" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#171717" text-anchor="start">可用数量已变化</text>
+<text x="108" y="655" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">当前仅剩 2 件，原预约数量为 3 件。</text>
+<text x="108" y="686" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">本次未创建预约，请核对后重新提交。</text>
+<rect x="108" y="762" width="564" height="46" rx="9" fill="#171717"/>
+<text x="390.0" y="791.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">核对最新商品</text>
+<rect x="740" y="512" width="620" height="324" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="768" y="536" width="80" height="28" rx="7" fill="#F6F6F6"/>
+<text x="808.0" y="555" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#333333" text-anchor="middle">提交失败</text>
+<text x="768" y="611" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#171717" text-anchor="start">预约未成功</text>
+<text x="768" y="655" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">本次预约已确认失败，未占用商品数量。</text>
+<text x="768" y="686" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">已保留你填写的数量，请稍后重试。</text>
+<rect x="768" y="762" width="564" height="46" rx="9" fill="#171717"/>
+<text x="1050.0" y="791.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">重试预约</text>
+<line x1="80" y1="958" x2="1360" y2="958" stroke="#E7E7E7" stroke-width="1"/>
+<text x="80" y="982" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="400" fill="#737373" text-anchor="start">校园集市</text>
+</svg>

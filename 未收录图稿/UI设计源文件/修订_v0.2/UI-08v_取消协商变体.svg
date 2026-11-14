@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1120" viewBox="0 0 1440 1120">
+<title>取消协商：申请与双方答复</title>
+<desc>校园二手交易系统 UI v0.2 修订稿，白底黑字。可导入的矢量素材，样例数据均为虚构。</desc>
+<rect x="0" y="0" width="1440" height="1120" rx="0" fill="#FFFFFF"/>
+<text x="80" y="78" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700" fill="#171717" text-anchor="start">取消协商</text>
+<text x="1170" y="77" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#171717" text-anchor="start">← 返回待答复列表</text>
+<text x="80" y="113" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">申请取消不改变原订单状态与库存占用，也不暂停原有倒计时。</text>
+<rect x="80" y="148" width="620" height="408" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="108" y="192" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#171717" text-anchor="start">申请取消订单</text>
+<text x="108" y="231" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="400" fill="#303030" text-anchor="start">暖光阅读台灯 · 1 件 · ¥25.00</text>
+<text x="108" y="264" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#737373" text-anchor="start">O20261104003 · 申请人：林同学（买家）</text>
+<text x="108" y="307" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">取消原因 *</text>
+<rect x="108" y="323" width="564" height="98" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="122" y="355" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">计划有变，希望与卖家协商取消。</text>
+<text x="122" y="383" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">对方同意前，订单仍为待确认。</text>
+<rect x="108" y="465" width="564" height="46" rx="9" fill="#171717"/>
+<text x="390.0" y="494.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">提交取消申请</text>
+<rect x="740" y="148" width="620" height="408" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="768" y="172" width="140" height="28" rx="7" fill="#F3F3F3"/>
+<text x="838.0" y="191" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">我发出的申请</text>
+<text x="768" y="237" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#171717" text-anchor="start">等待卖家许同学答复</text>
+<text x="768" y="280" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">暖光阅读台灯 · O20261104003</text>
+<text x="768" y="314" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">原订单仍为待确认，占用 1 件未释放。</text>
+<text x="768" y="348" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">同意时还须核对订单尚未付款。</text>
+<rect x="768" y="465" width="564" height="46" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="1050.0" y="494.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">返回买方列表</text>
+<rect x="80" y="580" width="620" height="418" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="108" y="604" width="220" height="28" rx="7" fill="#F7F7F7"/>
+<text x="218.0" y="623" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#515151" text-anchor="middle">我作为买方 · 待我答复</text>
+<text x="108" y="674" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#171717" text-anchor="start">卖家许同学申请取消</text>
+<text x="108" y="715" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">台灯 · O20261104003 · ¥25.00</text>
+<text x="108" y="755" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">原因：临时无法按约交付，希望协商取消。</text>
+<text x="108" y="796" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">双方同意且尚未付款时，才会取消并释放占用。</text>
+<rect x="108" y="837" width="272" height="48" rx="9" fill="#171717"/>
+<text x="244.0" y="867.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">同意取消</text>
+<rect x="396" y="837" width="276" height="48" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="534.0" y="867.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">拒绝申请</text>
+<text x="108" y="953" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#171717" text-anchor="start">返回对应交易列表 →</text>
+<rect x="740" y="580" width="620" height="418" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="768" y="604" width="220" height="28" rx="7" fill="#F7F7F7"/>
+<text x="878.0" y="623" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#515151" text-anchor="middle">我作为卖方 · 待我答复</text>
+<text x="768" y="674" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700" fill="#171717" text-anchor="start">买家周同学申请取消</text>
+<text x="768" y="715" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">教材 · O20261104001 · ¥30.00</text>
+<text x="768" y="755" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#303030" text-anchor="start">原因：学习计划调整，希望协商取消。</text>
+<text x="768" y="796" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">双方同意且尚未付款时，才会取消并释放占用。</text>
+<rect x="768" y="837" width="272" height="48" rx="9" fill="#171717"/>
+<text x="904.0" y="867.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">同意取消</text>
+<rect x="1056" y="837" width="276" height="48" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="1194.0" y="867.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">拒绝申请</text>
+<text x="768" y="953" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="400" fill="#171717" text-anchor="start">返回对应交易列表 →</text>
+<line x1="80" y1="1078" x2="1360" y2="1078" stroke="#E7E7E7" stroke-width="1"/>
+<text x="80" y="1102" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="400" fill="#737373" text-anchor="start">校园集市</text>
+</svg>

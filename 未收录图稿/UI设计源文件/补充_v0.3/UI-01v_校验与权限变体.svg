@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1180" viewBox="0 0 1440 1180">
+<title>验证码 查询 旧页面与权限反馈</title>
+<desc>校园二手交易系统补充模块初稿，白底黑字和彩色商品图。待审查，非真实业务。</desc>
+<rect x="0" y="0" width="1440" height="1180" rx="0" fill="#FFFFFF"/>
+<text x="80" y="80" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700" fill="#171717" text-anchor="start">校验与访问反馈</text>
+<text x="80" y="120" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">失败保留已填写内容，提示下一步，不把旧状态操作当作成功。</text>
+<rect x="80" y="160" width="620" height="426" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="104" y="182" width="108" height="28" rx="7" fill="#F3F3F3"/>
+<text x="158.0" y="201" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">学校邮箱验证</text>
+<text x="104" y="254" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" fill="#171717" text-anchor="start">验证码不可用</text>
+<text x="104" y="297" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">错误时提示剩余尝试次数。</text>
+<text x="104" y="327" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">过期或累计错误5次后，该码失效。</text>
+<text x="104" y="357" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">发送未满60秒时，显示剩余等待时间。</text>
+<rect x="104" y="492" width="572" height="44" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="390.0" y="520.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">返回邮箱验证</text>
+<rect x="740" y="160" width="620" height="426" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="764" y="182" width="80" height="28" rx="7" fill="#F3F3F3"/>
+<text x="804.0" y="201" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">商品查询</text>
+<text x="764" y="254" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" fill="#171717" text-anchor="start">没有找到匹配商品</text>
+<text x="764" y="297" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">可调整关键词、分类或价格条件。</text>
+<text x="764" y="327" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">下限60、上限10时提示价格区间无效。</text>
+<text x="764" y="357" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">不将无效条件当作有效空结果。</text>
+<rect x="764" y="492" width="572" height="44" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="1050.0" y="520.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">重置筛选条件</text>
+<rect x="80" y="640" width="620" height="426" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="104" y="662" width="150" height="28" rx="7" fill="#F3F3F3"/>
+<text x="179.0" y="681" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">预约提交前重新核对</text>
+<text x="104" y="734" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" fill="#171717" text-anchor="start">商品价格或状态已变化</text>
+<text x="104" y="777" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">旧单价¥10.00，当前价格¥12.00。</text>
+<text x="104" y="807" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">请刷新并重新确认，不能按旧价格成交。</text>
+<text x="104" y="837" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">已下架、库存不足时禁止创建预约。</text>
+<rect x="104" y="972" width="572" height="44" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="390.0" y="1000.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">刷新商品信息</text>
+<rect x="740" y="640" width="620" height="426" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="764" y="662" width="122" height="28" rx="7" fill="#F3F3F3"/>
+<text x="825.0" y="681" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">账号与资源归属</text>
+<text x="764" y="734" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" fill="#171717" text-anchor="start">当前操作无权限</text>
+<text x="764" y="777" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">未验证账号：先完成学校邮箱验证。</text>
+<text x="764" y="807" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">代交人只能访问分配给本人的任务。</text>
+<text x="764" y="837" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">他人订单、管理入口等拒绝越权访问。</text>
+<rect x="764" y="972" width="572" height="44" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="1050.0" y="1000.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">返回邮箱验证</text>
+<line x1="80" y1="1138" x2="1360" y2="1138" stroke="#E7E7E7" stroke-width="1"/>
+<text x="80" y="1162" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="400" fill="#737373" text-anchor="start">校园集市</text>
+</svg>

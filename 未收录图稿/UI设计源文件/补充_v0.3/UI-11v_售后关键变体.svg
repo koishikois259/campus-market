@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1220" viewBox="0 0 1440 1220">
+<title>售后资格 介入 验收及线下退款</title>
+<desc>校园二手交易系统补充模块初稿，白底黑字和彩色商品图。待审查，非真实业务。</desc>
+<rect x="0" y="0" width="1440" height="1220" rx="0" fill="#FFFFFF"/>
+<text x="80" y="80" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700" fill="#171717" text-anchor="start">售后处理的关键分支</text>
+<text x="80" y="120" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="400" fill="#737373" text-anchor="start">每个卡片为独立情形，操作始终受当前身份、原声明与处理阶段限制。</text>
+<rect x="80" y="160" width="620" height="456" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="104" y="182" width="80" height="28" rx="7" fill="#F3F3F3"/>
+<text x="144.0" y="201" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">买方视角</text>
+<text x="104" y="254" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" fill="#171717" text-anchor="start">当前不能申请普通售后</text>
+<text x="104" y="297" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">订单原声明不支持，或已超过收货后168小时。</text>
+<text x="104" y="327" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">赠送商品没有退款申请。</text>
+<text x="104" y="357" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">显示具体原因；违规问题仍可举报。</text>
+<rect x="108" y="505" width="564" height="44" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="390.0" y="533.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">举报商品或订单</text>
+<rect x="740" y="160" width="620" height="456" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="764" y="182" width="80" height="28" rx="7" fill="#F3F3F3"/>
+<text x="804.0" y="201" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">买方视角</text>
+<text x="764" y="254" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" fill="#171717" text-anchor="start">卖方拒绝或48小时未答复</text>
+<text x="764" y="297" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">卖方已拒绝，或到11月7日09:00仍未答复。</text>
+<text x="764" y="327" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">申请仍保留，超时不自动批准或退款。</text>
+<text x="764" y="357" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">由买方主动提交原因和证据申请介入。</text>
+<rect x="768" y="505" width="564" height="44" rx="9" fill="#FFFFFF" stroke="#E7E7E7"/>
+<text x="1050.0" y="533.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#303030" text-anchor="middle">申请管理员介入</text>
+<rect x="80" y="646" width="620" height="456" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="104" y="668" width="80" height="28" rx="7" fill="#F3F3F3"/>
+<text x="144.0" y="687" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">卖方视角</text>
+<text x="104" y="740" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" fill="#171717" text-anchor="start">商品已退回，等待验收</text>
+<text x="104" y="783" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">本次退回教材1件，预计退款¥10.00。</text>
+<text x="104" y="813" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">核对数量和商品状况后记录验收结论。</text>
+<text x="104" y="843" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">验收异常可补充证据，交管理员核查。</text>
+<rect x="108" y="991" width="564" height="44" rx="9" fill="#171717"/>
+<text x="390.0" y="1019.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">确认验收通过，进入退款处理</text>
+<rect x="740" y="646" width="620" height="456" rx="8" fill="#FFFFFF" stroke="#E7E7E7"/>
+<rect x="764" y="668" width="178" height="28" rx="7" fill="#F3F3F3"/>
+<text x="853.0" y="687" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="500" fill="#737373" text-anchor="middle">线下付款 · 买方视角</text>
+<text x="764" y="740" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" fill="#171717" text-anchor="start">等待确认实际收到退款</text>
+<text x="764" y="783" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">验收通过，卖方记录已线下退回¥10.00。</text>
+<text x="764" y="813" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">只有原订单买方确认收到后才记为已退款。</text>
+<text x="764" y="843" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="400" fill="#737373" text-anchor="start">线下退款不生成平台原路退款记录。</text>
+<rect x="768" y="991" width="564" height="44" rx="9" fill="#171717"/>
+<text x="1050.0" y="1019.0" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">确认实际收到退款 ¥10.00</text>
+<line x1="80" y1="1178" x2="1360" y2="1178" stroke="#E7E7E7" stroke-width="1"/>
+<text x="80" y="1202" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="400" fill="#737373" text-anchor="start">校园集市</text>
+</svg>
